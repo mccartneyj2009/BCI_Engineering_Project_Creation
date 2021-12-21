@@ -1,0 +1,12 @@
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.csproj.AssemblyReference.cache
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.csproj.SuggestedBindingRedirects.cache
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.Properties.Resources.resources
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.csproj.GenerateResource.cache
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.csproj.CoreCompileInputs.cache
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\bin\Debug\Drawing_Creation.exe.config
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\bin\Debug\Drawing_Creation.exe
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\bin\Debug\Drawing_Creation.pdb
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.exe
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.pdb
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Drawing_Creation.AhuEquipmentSetup.resources
+C:\Users\James McCartney\source\repos\Engineering_Project_Creation\Drawing_Creation\obj\Debug\Engineering_Project_Creation.MainWindow.resources
