@@ -37,10 +37,24 @@
             this.supplySPLLCheckBox = new System.Windows.Forms.CheckBox();
             this.supplySPHLCheckBox = new System.Windows.Forms.CheckBox();
             this.lltPanel = new System.Windows.Forms.Panel();
+            this.lltManResetRadioBtn = new System.Windows.Forms.RadioButton();
+            this.lltResetLbl = new System.Windows.Forms.Label();
+            this.lltAutoResetRadioBtn = new System.Windows.Forms.RadioButton();
             this.lltCheckBox = new System.Windows.Forms.CheckBox();
             this.lltLengthsCb = new System.Windows.Forms.ComboBox();
             this.lltLengthLbl = new System.Windows.Forms.Label();
             this.fansTab = new System.Windows.Forms.TabPage();
+            this.supplyFanGroupBox = new System.Windows.Forms.GroupBox();
+            this.bacnetCommCb = new System.Windows.Forms.ComboBox();
+            this.bacnetCommLbl = new System.Windows.Forms.Label();
+            this.fanVolSourceCb = new System.Windows.Forms.ComboBox();
+            this.fanVolSourceLbl = new System.Windows.Forms.Label();
+            this.fanStatusCb = new System.Windows.Forms.ComboBox();
+            this.fanVolCb = new System.Windows.Forms.ComboBox();
+            this.fanCountCb = new System.Windows.Forms.ComboBox();
+            this.fanStatusLbl = new System.Windows.Forms.Label();
+            this.constOrVarLbl = new System.Windows.Forms.Label();
+            this.countLbl = new System.Windows.Forms.Label();
             this.heatingTab = new System.Windows.Forms.TabPage();
             this.coolingTab = new System.Windows.Forms.TabPage();
             this.dampersTab = new System.Windows.Forms.TabPage();
@@ -52,12 +66,11 @@
             this.nextBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.lltAutoResetRadioBtn = new System.Windows.Forms.RadioButton();
-            this.lltResetLbl = new System.Windows.Forms.Label();
-            this.lltManResetRadioBtn = new System.Windows.Forms.RadioButton();
             this.ahuTabControl.SuspendLayout();
             this.safetiesTab.SuspendLayout();
             this.lltPanel.SuspendLayout();
+            this.fansTab.SuspendLayout();
+            this.supplyFanGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ahuTabControl
@@ -130,9 +143,9 @@
             this.returnSPHLCheckBox.AutoSize = true;
             this.returnSPHLCheckBox.Location = new System.Drawing.Point(10, 173);
             this.returnSPHLCheckBox.Name = "returnSPHLCheckBox";
-            this.returnSPHLCheckBox.Size = new System.Drawing.Size(186, 17);
+            this.returnSPHLCheckBox.Size = new System.Drawing.Size(181, 17);
             this.returnSPHLCheckBox.TabIndex = 6;
-            this.returnSPHLCheckBox.Text = "Return Static Pressure High Limit\"";
+            this.returnSPHLCheckBox.Text = "Return Static Pressure High Limit";
             this.returnSPHLCheckBox.UseVisualStyleBackColor = true;
             // 
             // supplySPLLCheckBox
@@ -168,6 +181,39 @@
             this.lltPanel.Size = new System.Drawing.Size(624, 25);
             this.lltPanel.TabIndex = 0;
             // 
+            // lltManResetRadioBtn
+            // 
+            this.lltManResetRadioBtn.AutoSize = true;
+            this.lltManResetRadioBtn.Enabled = false;
+            this.lltManResetRadioBtn.Location = new System.Drawing.Point(483, 3);
+            this.lltManResetRadioBtn.Name = "lltManResetRadioBtn";
+            this.lltManResetRadioBtn.Size = new System.Drawing.Size(60, 17);
+            this.lltManResetRadioBtn.TabIndex = 6;
+            this.lltManResetRadioBtn.TabStop = true;
+            this.lltManResetRadioBtn.Text = "Manual";
+            this.lltManResetRadioBtn.UseVisualStyleBackColor = true;
+            // 
+            // lltResetLbl
+            // 
+            this.lltResetLbl.AutoSize = true;
+            this.lltResetLbl.Location = new System.Drawing.Point(436, 6);
+            this.lltResetLbl.Name = "lltResetLbl";
+            this.lltResetLbl.Size = new System.Drawing.Size(41, 13);
+            this.lltResetLbl.TabIndex = 5;
+            this.lltResetLbl.Text = "Reset: ";
+            // 
+            // lltAutoResetRadioBtn
+            // 
+            this.lltAutoResetRadioBtn.AutoSize = true;
+            this.lltAutoResetRadioBtn.Enabled = false;
+            this.lltAutoResetRadioBtn.Location = new System.Drawing.Point(549, 3);
+            this.lltAutoResetRadioBtn.Name = "lltAutoResetRadioBtn";
+            this.lltAutoResetRadioBtn.Size = new System.Drawing.Size(72, 17);
+            this.lltAutoResetRadioBtn.TabIndex = 4;
+            this.lltAutoResetRadioBtn.TabStop = true;
+            this.lltAutoResetRadioBtn.Text = "Automatic";
+            this.lltAutoResetRadioBtn.UseVisualStyleBackColor = true;
+            // 
             // lltCheckBox
             // 
             this.lltCheckBox.AutoSize = true;
@@ -199,6 +245,7 @@
             // 
             // fansTab
             // 
+            this.fansTab.Controls.Add(this.supplyFanGroupBox);
             this.fansTab.Location = new System.Drawing.Point(4, 22);
             this.fansTab.Name = "fansTab";
             this.fansTab.Padding = new System.Windows.Forms.Padding(3);
@@ -206,6 +253,114 @@
             this.fansTab.TabIndex = 1;
             this.fansTab.Text = "Fans";
             this.fansTab.UseVisualStyleBackColor = true;
+            // 
+            // supplyFanGroupBox
+            // 
+            this.supplyFanGroupBox.Controls.Add(this.bacnetCommCb);
+            this.supplyFanGroupBox.Controls.Add(this.bacnetCommLbl);
+            this.supplyFanGroupBox.Controls.Add(this.fanVolSourceCb);
+            this.supplyFanGroupBox.Controls.Add(this.fanVolSourceLbl);
+            this.supplyFanGroupBox.Controls.Add(this.fanStatusCb);
+            this.supplyFanGroupBox.Controls.Add(this.fanVolCb);
+            this.supplyFanGroupBox.Controls.Add(this.fanCountCb);
+            this.supplyFanGroupBox.Controls.Add(this.fanStatusLbl);
+            this.supplyFanGroupBox.Controls.Add(this.constOrVarLbl);
+            this.supplyFanGroupBox.Controls.Add(this.countLbl);
+            this.supplyFanGroupBox.Location = new System.Drawing.Point(7, 7);
+            this.supplyFanGroupBox.Name = "supplyFanGroupBox";
+            this.supplyFanGroupBox.Size = new System.Drawing.Size(623, 102);
+            this.supplyFanGroupBox.TabIndex = 0;
+            this.supplyFanGroupBox.TabStop = false;
+            this.supplyFanGroupBox.Text = "Supply Fan";
+            // 
+            // bacnetCommCb
+            // 
+            this.bacnetCommCb.Enabled = false;
+            this.bacnetCommCb.FormattingEnabled = true;
+            this.bacnetCommCb.Location = new System.Drawing.Point(379, 44);
+            this.bacnetCommCb.Name = "bacnetCommCb";
+            this.bacnetCommCb.Size = new System.Drawing.Size(121, 21);
+            this.bacnetCommCb.TabIndex = 9;
+            // 
+            // bacnetCommLbl
+            // 
+            this.bacnetCommLbl.AutoSize = true;
+            this.bacnetCommLbl.Location = new System.Drawing.Point(249, 47);
+            this.bacnetCommLbl.Name = "bacnetCommLbl";
+            this.bacnetCommLbl.Size = new System.Drawing.Size(121, 13);
+            this.bacnetCommLbl.TabIndex = 8;
+            this.bacnetCommLbl.Text = "BACnet Communication:";
+            // 
+            // fanVolSourceCb
+            // 
+            this.fanVolSourceCb.Enabled = false;
+            this.fanVolSourceCb.FormattingEnabled = true;
+            this.fanVolSourceCb.Location = new System.Drawing.Point(97, 71);
+            this.fanVolSourceCb.Name = "fanVolSourceCb";
+            this.fanVolSourceCb.Size = new System.Drawing.Size(121, 21);
+            this.fanVolSourceCb.TabIndex = 7;
+            // 
+            // fanVolSourceLbl
+            // 
+            this.fanVolSourceLbl.AutoSize = true;
+            this.fanVolSourceLbl.Location = new System.Drawing.Point(9, 74);
+            this.fanVolSourceLbl.Name = "fanVolSourceLbl";
+            this.fanVolSourceLbl.Size = new System.Drawing.Size(82, 13);
+            this.fanVolSourceLbl.TabIndex = 6;
+            this.fanVolSourceLbl.Text = "Volume Source:";
+            // 
+            // fanStatusCb
+            // 
+            this.fanStatusCb.Enabled = false;
+            this.fanStatusCb.FormattingEnabled = true;
+            this.fanStatusCb.Location = new System.Drawing.Point(379, 17);
+            this.fanStatusCb.Name = "fanStatusCb";
+            this.fanStatusCb.Size = new System.Drawing.Size(121, 21);
+            this.fanStatusCb.TabIndex = 5;
+            // 
+            // fanVolCb
+            // 
+            this.fanVolCb.FormattingEnabled = true;
+            this.fanVolCb.Location = new System.Drawing.Point(97, 44);
+            this.fanVolCb.Name = "fanVolCb";
+            this.fanVolCb.Size = new System.Drawing.Size(121, 21);
+            this.fanVolCb.TabIndex = 4;
+            this.fanVolCb.SelectedIndexChanged += new System.EventHandler(this.fanVolCb_SelectedIndexChanged);
+            // 
+            // fanCountCb
+            // 
+            this.fanCountCb.FormattingEnabled = true;
+            this.fanCountCb.Location = new System.Drawing.Point(97, 17);
+            this.fanCountCb.Name = "fanCountCb";
+            this.fanCountCb.Size = new System.Drawing.Size(121, 21);
+            this.fanCountCb.TabIndex = 3;
+            // 
+            // fanStatusLbl
+            // 
+            this.fanStatusLbl.AutoSize = true;
+            this.fanStatusLbl.Location = new System.Drawing.Point(309, 20);
+            this.fanStatusLbl.Name = "fanStatusLbl";
+            this.fanStatusLbl.Size = new System.Drawing.Size(61, 13);
+            this.fanStatusLbl.TabIndex = 2;
+            this.fanStatusLbl.Text = "Fan Status:";
+            // 
+            // constOrVarLbl
+            // 
+            this.constOrVarLbl.AutoSize = true;
+            this.constOrVarLbl.Location = new System.Drawing.Point(25, 47);
+            this.constOrVarLbl.Name = "constOrVarLbl";
+            this.constOrVarLbl.Size = new System.Drawing.Size(66, 13);
+            this.constOrVarLbl.TabIndex = 1;
+            this.constOrVarLbl.Text = "Fan Volume:";
+            // 
+            // countLbl
+            // 
+            this.countLbl.AutoSize = true;
+            this.countLbl.Location = new System.Drawing.Point(6, 20);
+            this.countLbl.Name = "countLbl";
+            this.countLbl.Size = new System.Drawing.Size(85, 13);
+            this.countLbl.TabIndex = 0;
+            this.countLbl.Text = "Number of Fans:";
             // 
             // heatingTab
             // 
@@ -317,39 +472,6 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // lltAutoResetRadioBtn
-            // 
-            this.lltAutoResetRadioBtn.AutoSize = true;
-            this.lltAutoResetRadioBtn.Enabled = false;
-            this.lltAutoResetRadioBtn.Location = new System.Drawing.Point(549, 3);
-            this.lltAutoResetRadioBtn.Name = "lltAutoResetRadioBtn";
-            this.lltAutoResetRadioBtn.Size = new System.Drawing.Size(72, 17);
-            this.lltAutoResetRadioBtn.TabIndex = 4;
-            this.lltAutoResetRadioBtn.TabStop = true;
-            this.lltAutoResetRadioBtn.Text = "Automatic";
-            this.lltAutoResetRadioBtn.UseVisualStyleBackColor = true;
-            // 
-            // lltResetLbl
-            // 
-            this.lltResetLbl.AutoSize = true;
-            this.lltResetLbl.Location = new System.Drawing.Point(436, 6);
-            this.lltResetLbl.Name = "lltResetLbl";
-            this.lltResetLbl.Size = new System.Drawing.Size(41, 13);
-            this.lltResetLbl.TabIndex = 5;
-            this.lltResetLbl.Text = "Reset: ";
-            // 
-            // lltManResetRadioBtn
-            // 
-            this.lltManResetRadioBtn.AutoSize = true;
-            this.lltManResetRadioBtn.Enabled = false;
-            this.lltManResetRadioBtn.Location = new System.Drawing.Point(483, 3);
-            this.lltManResetRadioBtn.Name = "lltManResetRadioBtn";
-            this.lltManResetRadioBtn.Size = new System.Drawing.Size(60, 17);
-            this.lltManResetRadioBtn.TabIndex = 6;
-            this.lltManResetRadioBtn.TabStop = true;
-            this.lltManResetRadioBtn.Text = "Manual";
-            this.lltManResetRadioBtn.UseVisualStyleBackColor = true;
-            // 
             // AhuEquipmentSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +491,9 @@
             this.safetiesTab.PerformLayout();
             this.lltPanel.ResumeLayout(false);
             this.lltPanel.PerformLayout();
+            this.fansTab.ResumeLayout(false);
+            this.supplyFanGroupBox.ResumeLayout(false);
+            this.supplyFanGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -376,7 +501,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl ahuTabControl;
-        private System.Windows.Forms.TabPage safetiesTab;
         private System.Windows.Forms.TabPage fansTab;
         private System.Windows.Forms.TabPage heatingTab;
         private System.Windows.Forms.TabPage coolingTab;
@@ -389,18 +513,30 @@
         private System.Windows.Forms.Button nextBtn;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button closeBtn;
-        private System.Windows.Forms.Panel lltPanel;
-        private System.Windows.Forms.Label lltLengthLbl;
-        private System.Windows.Forms.ComboBox lltLengthsCb;
-        private System.Windows.Forms.CheckBox lltCheckBox;
+        private System.Windows.Forms.TabPage safetiesTab;
         private System.Windows.Forms.CheckBox supplySmokeCheckBox;
         private System.Windows.Forms.CheckBox returnSmokeCheckBox;
         private System.Windows.Forms.CheckBox returnSPLLCheckBox;
         private System.Windows.Forms.CheckBox returnSPHLCheckBox;
         private System.Windows.Forms.CheckBox supplySPLLCheckBox;
         private System.Windows.Forms.CheckBox supplySPHLCheckBox;
+        private System.Windows.Forms.Panel lltPanel;
         private System.Windows.Forms.RadioButton lltManResetRadioBtn;
         private System.Windows.Forms.Label lltResetLbl;
         private System.Windows.Forms.RadioButton lltAutoResetRadioBtn;
+        private System.Windows.Forms.CheckBox lltCheckBox;
+        private System.Windows.Forms.ComboBox lltLengthsCb;
+        private System.Windows.Forms.Label lltLengthLbl;
+        private System.Windows.Forms.GroupBox supplyFanGroupBox;
+        private System.Windows.Forms.Label fanStatusLbl;
+        private System.Windows.Forms.Label constOrVarLbl;
+        private System.Windows.Forms.Label countLbl;
+        private System.Windows.Forms.ComboBox fanStatusCb;
+        private System.Windows.Forms.ComboBox fanVolCb;
+        private System.Windows.Forms.ComboBox fanCountCb;
+        private System.Windows.Forms.Label fanVolSourceLbl;
+        private System.Windows.Forms.ComboBox fanVolSourceCb;
+        private System.Windows.Forms.ComboBox bacnetCommCb;
+        private System.Windows.Forms.Label bacnetCommLbl;
     }
 }

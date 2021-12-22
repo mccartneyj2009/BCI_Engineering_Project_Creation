@@ -13,21 +13,20 @@ namespace Drawing_Creation
 {
     public partial class AhuEquipmentSetup : Form
     {
+
+        public Control info = MainWindow.mainWindow;
+
+        //Constructor
         public AhuEquipmentSetup()
         {
             InitializeComponent();
 
-            List<string> safeties = new List<string>()
+            foreach (var item in info.Controls)
             {
-                "Low Limit Thermostat",
-                "Supply Static Pressure High Limit",
-                "Supply Static Pressure Low Limit",
-                "Return Static Pressure High Limit",
-                "Return Static Pressure Low Limit",
-                "Supply Smoke Detector",
-                "Return Smoke Detector"
-            };
+                Console.WriteLine(item);
+            }
 
+            //Low Limit Lengths Combo Box
             List<string> lltLengths = new List<string>()
             {
                 "6'",
@@ -39,6 +38,33 @@ namespace Drawing_Creation
             {
                 lltLengthsCb.Items.Add(length);
             }
+
+            //Supply Fan Combo Boxes
+            //number of Fans. Accounts for a fan wall.
+            List<string> fanCounts = new List<string>()
+            {
+                "1",
+                "2",
+                "4",
+                "8"
+            };
+
+            foreach(string fanCount in fanCounts)
+            {
+                fanCountCb.Items.Add(fanCount);
+            }
+
+            //fan volume
+            List<string> fanVolumes = new List<string>()
+            {
+                "Constant Volume",
+                "Variable Air Volume"
+            };
+            foreach (string fanVolume in fanVolumes)
+            {
+                fanVolCb.Items.Add(fanVolume);
+            }
+
         }
 
         private void closeBtn_Click(object sender, EventArgs e)
@@ -56,6 +82,84 @@ namespace Drawing_Creation
             lltLengthsCb.Enabled = lltCheckBox.Checked;
             lltManResetRadioBtn.Enabled = lltCheckBox.Checked;
             lltAutoResetRadioBtn.Enabled = lltCheckBox.Checked;
+        }
+
+        private void fanVolCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            fanStatusCb.Items.Clear();
+            fanVolSourceCb.Items.Clear();
+            bacnetCommCb.Items.Clear();
+
+            if (fanVolCb.Text == "Constant Volume")
+            {
+                fanStatusCb.Enabled = true;
+                fanVolSourceCb.Enabled = false;
+                bacnetCommCb.Enabled = false;
+
+                fanStatusCb.Text = "";
+                fanVolSourceCb.Text = "";
+                bacnetCommCb.Text = "";
+
+                //fan status
+                List<string> fanStatuses = new List<string>()
+                {
+                    "Binary",
+                    "Analog"
+                };
+
+                foreach (string fanStatus in fanStatuses)
+                {
+                    fanStatusCb.Items.Add(fanStatus);
+                }
+            }
+
+            if (fanVolCb.Text == "Variable Air Volume")
+            {
+                fanStatusCb.Enabled = true;
+                fanVolSourceCb.Enabled = true;
+                bacnetCommCb.Enabled = true;
+
+                fanStatusCb.Text = "";
+
+                //fan status
+                List<string> fanStatuses = new List<string>()
+                {
+                    "Binary",
+                    "Analog",
+                    "VFD", 
+                    "ECM"
+                };
+
+                foreach (string fanStatus in fanStatuses)
+                {
+                    fanStatusCb.Items.Add(fanStatus);
+                }
+
+                //fan volume source
+                List<string> volumeSources = new List<string>()
+                {
+                    "VFD",
+                    "ECM",
+                    "Turning Vanes"
+                };
+
+                foreach(string volumeSource in volumeSources)
+                {
+                    fanVolSourceCb.Items.Add(volumeSource);
+                }
+
+                //bacnet communication
+                List<string> bacnetCommOptions = new List<string>()
+                {
+                    "Yes",
+                    "No"
+                };
+
+                foreach (string bacnetOption in bacnetCommOptions)
+                {
+                    bacnetCommCb.Items.Add(bacnetOption);
+                }
+            }
         }
     }
 }

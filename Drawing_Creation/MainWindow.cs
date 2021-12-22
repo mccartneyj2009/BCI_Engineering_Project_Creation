@@ -14,6 +14,8 @@ namespace Engineering_Project_Creation
 {
     public partial class MainWindow : Form
     {
+
+        public static MainWindow mainWindow;
         public string customer { get; set; }
         public string projName { get; set; }
         public string projNumber { get; set; }
@@ -83,26 +85,29 @@ namespace Engineering_Project_Creation
 
         private void nextBtn_Click(object sender, EventArgs e)
         {
-            if (sysTypeCb.Text == "AHU")
-            {
-                Console.WriteLine("AHU");
-            }
-
-            //string path = "C:\\Users\\James McCartney\\source\\repos\\Engineering_Project_Creation\\Drawing_Creation\\assests\\visio_files\\template.vsdx";
-
-            //Visio.Application vs = new Visio.Application();
-
-            //var drawing = vs.Documents.Add(path);
-
-            // Console.WriteLine(drawing.Name);
-
-            //this.customer = custTb.Text;
-
-            //string cust = this.customer;
+            customer = custTb.Text;
+            projName = projNameTb.Text;
+            projNumber = projNumTb.Text;
+            sysName = sysNameTb.Text;
+            sysType = sysTypeCb.Text;
+            rev = revCb.Text;
+            revNum = revNumCb.Text;
+            drawingNum = drawingNumCb.Text;
+            designer = desInitTb.Text;
+            installer = instInitTb.Text;
+            mainWindow = this;
 
             var equipSetupForm = new AhuEquipmentSetup();
-
             equipSetupForm.ShowDialog();
+
+            
+            //Below is some code for how to start the Visio stuff.
+            //string path = "C:\\Users\\James McCartney\\source\\repos\\Engineering_Project_Creation\\Drawing_Creation\\assests\\visio_files\\template.vsdx";
+            //Visio.Application vs = new Visio.Application();
+            //var drawing = vs.Documents.Add(path);
+            // Console.WriteLine(drawing.Name);
+            //this.customer = custTb.Text;
+            //string cust = this.customer;
 
         }
     }
