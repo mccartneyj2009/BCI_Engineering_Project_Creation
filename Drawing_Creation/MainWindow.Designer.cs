@@ -206,6 +206,7 @@
             // 
             // revNumCb
             // 
+            this.revNumCb.Enabled = false;
             this.revNumCb.FormattingEnabled = true;
             this.revNumCb.Location = new System.Drawing.Point(93, 239);
             this.revNumCb.Name = "revNumCb";
@@ -227,6 +228,7 @@
             this.revCb.Name = "revCb";
             this.revCb.Size = new System.Drawing.Size(164, 21);
             this.revCb.TabIndex = 15;
+            this.revCb.SelectedIndexChanged += new System.EventHandler(this.revCb_SelectedIndexChanged);
             // 
             // sysTypeCb
             // 

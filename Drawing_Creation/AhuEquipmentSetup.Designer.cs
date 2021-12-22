@@ -44,17 +44,39 @@
             this.lltLengthsCb = new System.Windows.Forms.ComboBox();
             this.lltLengthLbl = new System.Windows.Forms.Label();
             this.fansTab = new System.Windows.Forms.TabPage();
+            this.rlfExhFanGroupBox = new System.Windows.Forms.GroupBox();
+            this.rlfExhBacnetCommCb = new System.Windows.Forms.ComboBox();
+            this.rlfExhBacnetCommLbl = new System.Windows.Forms.Label();
+            this.rlfExhFanVolSourceCb = new System.Windows.Forms.ComboBox();
+            this.rlfExhFanVolSourceLbl = new System.Windows.Forms.Label();
+            this.rlfExhFanStatusCb = new System.Windows.Forms.ComboBox();
+            this.rlfExhFanVolCb = new System.Windows.Forms.ComboBox();
+            this.rlfExhFanCountCb = new System.Windows.Forms.ComboBox();
+            this.rlfExhFanStatusLbl = new System.Windows.Forms.Label();
+            this.rlfExhVolumeLbl = new System.Windows.Forms.Label();
+            this.rlfExhCountLbl = new System.Windows.Forms.Label();
+            this.returnFanGroupBox = new System.Windows.Forms.GroupBox();
+            this.rfBacnetCommCb = new System.Windows.Forms.ComboBox();
+            this.rfBacnetCommLbl = new System.Windows.Forms.Label();
+            this.rfanVolSourceCb = new System.Windows.Forms.ComboBox();
+            this.rfanVolSourceLbl = new System.Windows.Forms.Label();
+            this.rfanStatusCb = new System.Windows.Forms.ComboBox();
+            this.rfanVolCb = new System.Windows.Forms.ComboBox();
+            this.rfanCountCb = new System.Windows.Forms.ComboBox();
+            this.rfanStatusLbl = new System.Windows.Forms.Label();
+            this.rfVolumeLbl = new System.Windows.Forms.Label();
+            this.rfCountLbl = new System.Windows.Forms.Label();
             this.supplyFanGroupBox = new System.Windows.Forms.GroupBox();
-            this.bacnetCommCb = new System.Windows.Forms.ComboBox();
-            this.bacnetCommLbl = new System.Windows.Forms.Label();
-            this.fanVolSourceCb = new System.Windows.Forms.ComboBox();
-            this.fanVolSourceLbl = new System.Windows.Forms.Label();
-            this.fanStatusCb = new System.Windows.Forms.ComboBox();
-            this.fanVolCb = new System.Windows.Forms.ComboBox();
-            this.fanCountCb = new System.Windows.Forms.ComboBox();
-            this.fanStatusLbl = new System.Windows.Forms.Label();
-            this.constOrVarLbl = new System.Windows.Forms.Label();
-            this.countLbl = new System.Windows.Forms.Label();
+            this.sfBacnetCommCb = new System.Windows.Forms.ComboBox();
+            this.sfBacnetCommLbl = new System.Windows.Forms.Label();
+            this.sfanVolSourceCb = new System.Windows.Forms.ComboBox();
+            this.sfanVolSourceLbl = new System.Windows.Forms.Label();
+            this.sfanStatusCb = new System.Windows.Forms.ComboBox();
+            this.sfanVolCb = new System.Windows.Forms.ComboBox();
+            this.sfanCountCb = new System.Windows.Forms.ComboBox();
+            this.sfanStatusLbl = new System.Windows.Forms.Label();
+            this.sfconstOrVarLbl = new System.Windows.Forms.Label();
+            this.sfCountLbl = new System.Windows.Forms.Label();
             this.heatingTab = new System.Windows.Forms.TabPage();
             this.coolingTab = new System.Windows.Forms.TabPage();
             this.dampersTab = new System.Windows.Forms.TabPage();
@@ -64,12 +86,13 @@
             this.alarmingTab = new System.Windows.Forms.TabPage();
             this.controllerTab = new System.Windows.Forms.TabPage();
             this.nextBtn = new System.Windows.Forms.Button();
-            this.backBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
             this.ahuTabControl.SuspendLayout();
             this.safetiesTab.SuspendLayout();
             this.lltPanel.SuspendLayout();
             this.fansTab.SuspendLayout();
+            this.rlfExhFanGroupBox.SuspendLayout();
+            this.returnFanGroupBox.SuspendLayout();
             this.supplyFanGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -245,6 +268,8 @@
             // 
             // fansTab
             // 
+            this.fansTab.Controls.Add(this.rlfExhFanGroupBox);
+            this.fansTab.Controls.Add(this.returnFanGroupBox);
             this.fansTab.Controls.Add(this.supplyFanGroupBox);
             this.fansTab.Location = new System.Drawing.Point(4, 22);
             this.fansTab.Name = "fansTab";
@@ -254,18 +279,236 @@
             this.fansTab.Text = "Fans";
             this.fansTab.UseVisualStyleBackColor = true;
             // 
+            // rlfExhFanGroupBox
+            // 
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhBacnetCommCb);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhBacnetCommLbl);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanVolSourceCb);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanVolSourceLbl);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanStatusCb);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanVolCb);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanCountCb);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanStatusLbl);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhVolumeLbl);
+            this.rlfExhFanGroupBox.Controls.Add(this.rlfExhCountLbl);
+            this.rlfExhFanGroupBox.Location = new System.Drawing.Point(7, 249);
+            this.rlfExhFanGroupBox.Name = "rlfExhFanGroupBox";
+            this.rlfExhFanGroupBox.Size = new System.Drawing.Size(623, 102);
+            this.rlfExhFanGroupBox.TabIndex = 11;
+            this.rlfExhFanGroupBox.TabStop = false;
+            this.rlfExhFanGroupBox.Text = "Relief/Exhaust Fan";
+            // 
+            // rlfExhBacnetCommCb
+            // 
+            this.rlfExhBacnetCommCb.Enabled = false;
+            this.rlfExhBacnetCommCb.FormattingEnabled = true;
+            this.rlfExhBacnetCommCb.Location = new System.Drawing.Point(379, 44);
+            this.rlfExhBacnetCommCb.Name = "rlfExhBacnetCommCb";
+            this.rlfExhBacnetCommCb.Size = new System.Drawing.Size(121, 21);
+            this.rlfExhBacnetCommCb.TabIndex = 9;
+            // 
+            // rlfExhBacnetCommLbl
+            // 
+            this.rlfExhBacnetCommLbl.AutoSize = true;
+            this.rlfExhBacnetCommLbl.Location = new System.Drawing.Point(249, 47);
+            this.rlfExhBacnetCommLbl.Name = "rlfExhBacnetCommLbl";
+            this.rlfExhBacnetCommLbl.Size = new System.Drawing.Size(121, 13);
+            this.rlfExhBacnetCommLbl.TabIndex = 8;
+            this.rlfExhBacnetCommLbl.Text = "BACnet Communication:";
+            // 
+            // rlfExhFanVolSourceCb
+            // 
+            this.rlfExhFanVolSourceCb.Enabled = false;
+            this.rlfExhFanVolSourceCb.FormattingEnabled = true;
+            this.rlfExhFanVolSourceCb.Location = new System.Drawing.Point(97, 71);
+            this.rlfExhFanVolSourceCb.Name = "rlfExhFanVolSourceCb";
+            this.rlfExhFanVolSourceCb.Size = new System.Drawing.Size(121, 21);
+            this.rlfExhFanVolSourceCb.TabIndex = 7;
+            // 
+            // rlfExhFanVolSourceLbl
+            // 
+            this.rlfExhFanVolSourceLbl.AutoSize = true;
+            this.rlfExhFanVolSourceLbl.Location = new System.Drawing.Point(9, 74);
+            this.rlfExhFanVolSourceLbl.Name = "rlfExhFanVolSourceLbl";
+            this.rlfExhFanVolSourceLbl.Size = new System.Drawing.Size(82, 13);
+            this.rlfExhFanVolSourceLbl.TabIndex = 6;
+            this.rlfExhFanVolSourceLbl.Text = "Volume Source:";
+            // 
+            // rlfExhFanStatusCb
+            // 
+            this.rlfExhFanStatusCb.Enabled = false;
+            this.rlfExhFanStatusCb.FormattingEnabled = true;
+            this.rlfExhFanStatusCb.Location = new System.Drawing.Point(379, 17);
+            this.rlfExhFanStatusCb.Name = "rlfExhFanStatusCb";
+            this.rlfExhFanStatusCb.Size = new System.Drawing.Size(121, 21);
+            this.rlfExhFanStatusCb.TabIndex = 5;
+            // 
+            // rlfExhFanVolCb
+            // 
+            this.rlfExhFanVolCb.Enabled = false;
+            this.rlfExhFanVolCb.FormattingEnabled = true;
+            this.rlfExhFanVolCb.Location = new System.Drawing.Point(97, 44);
+            this.rlfExhFanVolCb.Name = "rlfExhFanVolCb";
+            this.rlfExhFanVolCb.Size = new System.Drawing.Size(121, 21);
+            this.rlfExhFanVolCb.TabIndex = 4;
+            // 
+            // rlfExhFanCountCb
+            // 
+            this.rlfExhFanCountCb.FormattingEnabled = true;
+            this.rlfExhFanCountCb.Location = new System.Drawing.Point(97, 17);
+            this.rlfExhFanCountCb.Name = "rlfExhFanCountCb";
+            this.rlfExhFanCountCb.Size = new System.Drawing.Size(121, 21);
+            this.rlfExhFanCountCb.TabIndex = 3;
+            // 
+            // rlfExhFanStatusLbl
+            // 
+            this.rlfExhFanStatusLbl.AutoSize = true;
+            this.rlfExhFanStatusLbl.Location = new System.Drawing.Point(309, 20);
+            this.rlfExhFanStatusLbl.Name = "rlfExhFanStatusLbl";
+            this.rlfExhFanStatusLbl.Size = new System.Drawing.Size(61, 13);
+            this.rlfExhFanStatusLbl.TabIndex = 2;
+            this.rlfExhFanStatusLbl.Text = "Fan Status:";
+            // 
+            // rlfExhVolumeLbl
+            // 
+            this.rlfExhVolumeLbl.AutoSize = true;
+            this.rlfExhVolumeLbl.Location = new System.Drawing.Point(25, 47);
+            this.rlfExhVolumeLbl.Name = "rlfExhVolumeLbl";
+            this.rlfExhVolumeLbl.Size = new System.Drawing.Size(66, 13);
+            this.rlfExhVolumeLbl.TabIndex = 1;
+            this.rlfExhVolumeLbl.Text = "Fan Volume:";
+            // 
+            // rlfExhCountLbl
+            // 
+            this.rlfExhCountLbl.AutoSize = true;
+            this.rlfExhCountLbl.Location = new System.Drawing.Point(6, 20);
+            this.rlfExhCountLbl.Name = "rlfExhCountLbl";
+            this.rlfExhCountLbl.Size = new System.Drawing.Size(85, 13);
+            this.rlfExhCountLbl.TabIndex = 0;
+            this.rlfExhCountLbl.Text = "Number of Fans:";
+            // 
+            // returnFanGroupBox
+            // 
+            this.returnFanGroupBox.Controls.Add(this.rfBacnetCommCb);
+            this.returnFanGroupBox.Controls.Add(this.rfBacnetCommLbl);
+            this.returnFanGroupBox.Controls.Add(this.rfanVolSourceCb);
+            this.returnFanGroupBox.Controls.Add(this.rfanVolSourceLbl);
+            this.returnFanGroupBox.Controls.Add(this.rfanStatusCb);
+            this.returnFanGroupBox.Controls.Add(this.rfanVolCb);
+            this.returnFanGroupBox.Controls.Add(this.rfanCountCb);
+            this.returnFanGroupBox.Controls.Add(this.rfanStatusLbl);
+            this.returnFanGroupBox.Controls.Add(this.rfVolumeLbl);
+            this.returnFanGroupBox.Controls.Add(this.rfCountLbl);
+            this.returnFanGroupBox.Location = new System.Drawing.Point(7, 128);
+            this.returnFanGroupBox.Name = "returnFanGroupBox";
+            this.returnFanGroupBox.Size = new System.Drawing.Size(623, 102);
+            this.returnFanGroupBox.TabIndex = 10;
+            this.returnFanGroupBox.TabStop = false;
+            this.returnFanGroupBox.Text = "Return Fan";
+            // 
+            // rfBacnetCommCb
+            // 
+            this.rfBacnetCommCb.Enabled = false;
+            this.rfBacnetCommCb.FormattingEnabled = true;
+            this.rfBacnetCommCb.Location = new System.Drawing.Point(379, 44);
+            this.rfBacnetCommCb.Name = "rfBacnetCommCb";
+            this.rfBacnetCommCb.Size = new System.Drawing.Size(121, 21);
+            this.rfBacnetCommCb.TabIndex = 9;
+            // 
+            // rfBacnetCommLbl
+            // 
+            this.rfBacnetCommLbl.AutoSize = true;
+            this.rfBacnetCommLbl.Location = new System.Drawing.Point(249, 47);
+            this.rfBacnetCommLbl.Name = "rfBacnetCommLbl";
+            this.rfBacnetCommLbl.Size = new System.Drawing.Size(121, 13);
+            this.rfBacnetCommLbl.TabIndex = 8;
+            this.rfBacnetCommLbl.Text = "BACnet Communication:";
+            // 
+            // rfanVolSourceCb
+            // 
+            this.rfanVolSourceCb.Enabled = false;
+            this.rfanVolSourceCb.FormattingEnabled = true;
+            this.rfanVolSourceCb.Location = new System.Drawing.Point(97, 71);
+            this.rfanVolSourceCb.Name = "rfanVolSourceCb";
+            this.rfanVolSourceCb.Size = new System.Drawing.Size(121, 21);
+            this.rfanVolSourceCb.TabIndex = 7;
+            // 
+            // rfanVolSourceLbl
+            // 
+            this.rfanVolSourceLbl.AutoSize = true;
+            this.rfanVolSourceLbl.Location = new System.Drawing.Point(9, 74);
+            this.rfanVolSourceLbl.Name = "rfanVolSourceLbl";
+            this.rfanVolSourceLbl.Size = new System.Drawing.Size(82, 13);
+            this.rfanVolSourceLbl.TabIndex = 6;
+            this.rfanVolSourceLbl.Text = "Volume Source:";
+            // 
+            // rfanStatusCb
+            // 
+            this.rfanStatusCb.Enabled = false;
+            this.rfanStatusCb.FormattingEnabled = true;
+            this.rfanStatusCb.Location = new System.Drawing.Point(379, 17);
+            this.rfanStatusCb.Name = "rfanStatusCb";
+            this.rfanStatusCb.Size = new System.Drawing.Size(121, 21);
+            this.rfanStatusCb.TabIndex = 5;
+            // 
+            // rfanVolCb
+            // 
+            this.rfanVolCb.Enabled = false;
+            this.rfanVolCb.FormattingEnabled = true;
+            this.rfanVolCb.Location = new System.Drawing.Point(97, 44);
+            this.rfanVolCb.Name = "rfanVolCb";
+            this.rfanVolCb.Size = new System.Drawing.Size(121, 21);
+            this.rfanVolCb.TabIndex = 4;
+            this.rfanVolCb.SelectedIndexChanged += new System.EventHandler(this.rfanVolCb_SelectedIndexChanged);
+            // 
+            // rfanCountCb
+            // 
+            this.rfanCountCb.FormattingEnabled = true;
+            this.rfanCountCb.Location = new System.Drawing.Point(97, 17);
+            this.rfanCountCb.Name = "rfanCountCb";
+            this.rfanCountCb.Size = new System.Drawing.Size(121, 21);
+            this.rfanCountCb.TabIndex = 3;
+            this.rfanCountCb.SelectedIndexChanged += new System.EventHandler(this.rfanCountCb_SelectedIndexChanged);
+            // 
+            // rfanStatusLbl
+            // 
+            this.rfanStatusLbl.AutoSize = true;
+            this.rfanStatusLbl.Location = new System.Drawing.Point(309, 20);
+            this.rfanStatusLbl.Name = "rfanStatusLbl";
+            this.rfanStatusLbl.Size = new System.Drawing.Size(61, 13);
+            this.rfanStatusLbl.TabIndex = 2;
+            this.rfanStatusLbl.Text = "Fan Status:";
+            // 
+            // rfVolumeLbl
+            // 
+            this.rfVolumeLbl.AutoSize = true;
+            this.rfVolumeLbl.Location = new System.Drawing.Point(25, 47);
+            this.rfVolumeLbl.Name = "rfVolumeLbl";
+            this.rfVolumeLbl.Size = new System.Drawing.Size(66, 13);
+            this.rfVolumeLbl.TabIndex = 1;
+            this.rfVolumeLbl.Text = "Fan Volume:";
+            // 
+            // rfCountLbl
+            // 
+            this.rfCountLbl.AutoSize = true;
+            this.rfCountLbl.Location = new System.Drawing.Point(6, 20);
+            this.rfCountLbl.Name = "rfCountLbl";
+            this.rfCountLbl.Size = new System.Drawing.Size(85, 13);
+            this.rfCountLbl.TabIndex = 0;
+            this.rfCountLbl.Text = "Number of Fans:";
+            // 
             // supplyFanGroupBox
             // 
-            this.supplyFanGroupBox.Controls.Add(this.bacnetCommCb);
-            this.supplyFanGroupBox.Controls.Add(this.bacnetCommLbl);
-            this.supplyFanGroupBox.Controls.Add(this.fanVolSourceCb);
-            this.supplyFanGroupBox.Controls.Add(this.fanVolSourceLbl);
-            this.supplyFanGroupBox.Controls.Add(this.fanStatusCb);
-            this.supplyFanGroupBox.Controls.Add(this.fanVolCb);
-            this.supplyFanGroupBox.Controls.Add(this.fanCountCb);
-            this.supplyFanGroupBox.Controls.Add(this.fanStatusLbl);
-            this.supplyFanGroupBox.Controls.Add(this.constOrVarLbl);
-            this.supplyFanGroupBox.Controls.Add(this.countLbl);
+            this.supplyFanGroupBox.Controls.Add(this.sfBacnetCommCb);
+            this.supplyFanGroupBox.Controls.Add(this.sfBacnetCommLbl);
+            this.supplyFanGroupBox.Controls.Add(this.sfanVolSourceCb);
+            this.supplyFanGroupBox.Controls.Add(this.sfanVolSourceLbl);
+            this.supplyFanGroupBox.Controls.Add(this.sfanStatusCb);
+            this.supplyFanGroupBox.Controls.Add(this.sfanVolCb);
+            this.supplyFanGroupBox.Controls.Add(this.sfanCountCb);
+            this.supplyFanGroupBox.Controls.Add(this.sfanStatusLbl);
+            this.supplyFanGroupBox.Controls.Add(this.sfconstOrVarLbl);
+            this.supplyFanGroupBox.Controls.Add(this.sfCountLbl);
             this.supplyFanGroupBox.Location = new System.Drawing.Point(7, 7);
             this.supplyFanGroupBox.Name = "supplyFanGroupBox";
             this.supplyFanGroupBox.Size = new System.Drawing.Size(623, 102);
@@ -273,94 +516,94 @@
             this.supplyFanGroupBox.TabStop = false;
             this.supplyFanGroupBox.Text = "Supply Fan";
             // 
-            // bacnetCommCb
+            // sfBacnetCommCb
             // 
-            this.bacnetCommCb.Enabled = false;
-            this.bacnetCommCb.FormattingEnabled = true;
-            this.bacnetCommCb.Location = new System.Drawing.Point(379, 44);
-            this.bacnetCommCb.Name = "bacnetCommCb";
-            this.bacnetCommCb.Size = new System.Drawing.Size(121, 21);
-            this.bacnetCommCb.TabIndex = 9;
+            this.sfBacnetCommCb.Enabled = false;
+            this.sfBacnetCommCb.FormattingEnabled = true;
+            this.sfBacnetCommCb.Location = new System.Drawing.Point(379, 44);
+            this.sfBacnetCommCb.Name = "sfBacnetCommCb";
+            this.sfBacnetCommCb.Size = new System.Drawing.Size(121, 21);
+            this.sfBacnetCommCb.TabIndex = 9;
             // 
-            // bacnetCommLbl
+            // sfBacnetCommLbl
             // 
-            this.bacnetCommLbl.AutoSize = true;
-            this.bacnetCommLbl.Location = new System.Drawing.Point(249, 47);
-            this.bacnetCommLbl.Name = "bacnetCommLbl";
-            this.bacnetCommLbl.Size = new System.Drawing.Size(121, 13);
-            this.bacnetCommLbl.TabIndex = 8;
-            this.bacnetCommLbl.Text = "BACnet Communication:";
+            this.sfBacnetCommLbl.AutoSize = true;
+            this.sfBacnetCommLbl.Location = new System.Drawing.Point(249, 47);
+            this.sfBacnetCommLbl.Name = "sfBacnetCommLbl";
+            this.sfBacnetCommLbl.Size = new System.Drawing.Size(121, 13);
+            this.sfBacnetCommLbl.TabIndex = 8;
+            this.sfBacnetCommLbl.Text = "BACnet Communication:";
             // 
-            // fanVolSourceCb
+            // sfanVolSourceCb
             // 
-            this.fanVolSourceCb.Enabled = false;
-            this.fanVolSourceCb.FormattingEnabled = true;
-            this.fanVolSourceCb.Location = new System.Drawing.Point(97, 71);
-            this.fanVolSourceCb.Name = "fanVolSourceCb";
-            this.fanVolSourceCb.Size = new System.Drawing.Size(121, 21);
-            this.fanVolSourceCb.TabIndex = 7;
+            this.sfanVolSourceCb.Enabled = false;
+            this.sfanVolSourceCb.FormattingEnabled = true;
+            this.sfanVolSourceCb.Location = new System.Drawing.Point(97, 71);
+            this.sfanVolSourceCb.Name = "sfanVolSourceCb";
+            this.sfanVolSourceCb.Size = new System.Drawing.Size(121, 21);
+            this.sfanVolSourceCb.TabIndex = 7;
             // 
-            // fanVolSourceLbl
+            // sfanVolSourceLbl
             // 
-            this.fanVolSourceLbl.AutoSize = true;
-            this.fanVolSourceLbl.Location = new System.Drawing.Point(9, 74);
-            this.fanVolSourceLbl.Name = "fanVolSourceLbl";
-            this.fanVolSourceLbl.Size = new System.Drawing.Size(82, 13);
-            this.fanVolSourceLbl.TabIndex = 6;
-            this.fanVolSourceLbl.Text = "Volume Source:";
+            this.sfanVolSourceLbl.AutoSize = true;
+            this.sfanVolSourceLbl.Location = new System.Drawing.Point(9, 74);
+            this.sfanVolSourceLbl.Name = "sfanVolSourceLbl";
+            this.sfanVolSourceLbl.Size = new System.Drawing.Size(82, 13);
+            this.sfanVolSourceLbl.TabIndex = 6;
+            this.sfanVolSourceLbl.Text = "Volume Source:";
             // 
-            // fanStatusCb
+            // sfanStatusCb
             // 
-            this.fanStatusCb.Enabled = false;
-            this.fanStatusCb.FormattingEnabled = true;
-            this.fanStatusCb.Location = new System.Drawing.Point(379, 17);
-            this.fanStatusCb.Name = "fanStatusCb";
-            this.fanStatusCb.Size = new System.Drawing.Size(121, 21);
-            this.fanStatusCb.TabIndex = 5;
+            this.sfanStatusCb.Enabled = false;
+            this.sfanStatusCb.FormattingEnabled = true;
+            this.sfanStatusCb.Location = new System.Drawing.Point(379, 17);
+            this.sfanStatusCb.Name = "sfanStatusCb";
+            this.sfanStatusCb.Size = new System.Drawing.Size(121, 21);
+            this.sfanStatusCb.TabIndex = 5;
             // 
-            // fanVolCb
+            // sfanVolCb
             // 
-            this.fanVolCb.FormattingEnabled = true;
-            this.fanVolCb.Location = new System.Drawing.Point(97, 44);
-            this.fanVolCb.Name = "fanVolCb";
-            this.fanVolCb.Size = new System.Drawing.Size(121, 21);
-            this.fanVolCb.TabIndex = 4;
-            this.fanVolCb.SelectedIndexChanged += new System.EventHandler(this.fanVolCb_SelectedIndexChanged);
+            this.sfanVolCb.FormattingEnabled = true;
+            this.sfanVolCb.Location = new System.Drawing.Point(97, 44);
+            this.sfanVolCb.Name = "sfanVolCb";
+            this.sfanVolCb.Size = new System.Drawing.Size(121, 21);
+            this.sfanVolCb.TabIndex = 4;
+            this.sfanVolCb.TextChanged += new System.EventHandler(this.sfanVolCb_TextChanged);
             // 
-            // fanCountCb
+            // sfanCountCb
             // 
-            this.fanCountCb.FormattingEnabled = true;
-            this.fanCountCb.Location = new System.Drawing.Point(97, 17);
-            this.fanCountCb.Name = "fanCountCb";
-            this.fanCountCb.Size = new System.Drawing.Size(121, 21);
-            this.fanCountCb.TabIndex = 3;
+            this.sfanCountCb.FormattingEnabled = true;
+            this.sfanCountCb.Location = new System.Drawing.Point(97, 17);
+            this.sfanCountCb.Name = "sfanCountCb";
+            this.sfanCountCb.Size = new System.Drawing.Size(121, 21);
+            this.sfanCountCb.TabIndex = 3;
             // 
-            // fanStatusLbl
+            // sfanStatusLbl
             // 
-            this.fanStatusLbl.AutoSize = true;
-            this.fanStatusLbl.Location = new System.Drawing.Point(309, 20);
-            this.fanStatusLbl.Name = "fanStatusLbl";
-            this.fanStatusLbl.Size = new System.Drawing.Size(61, 13);
-            this.fanStatusLbl.TabIndex = 2;
-            this.fanStatusLbl.Text = "Fan Status:";
+            this.sfanStatusLbl.AutoSize = true;
+            this.sfanStatusLbl.Location = new System.Drawing.Point(309, 20);
+            this.sfanStatusLbl.Name = "sfanStatusLbl";
+            this.sfanStatusLbl.Size = new System.Drawing.Size(61, 13);
+            this.sfanStatusLbl.TabIndex = 2;
+            this.sfanStatusLbl.Text = "Fan Status:";
             // 
-            // constOrVarLbl
+            // sfconstOrVarLbl
             // 
-            this.constOrVarLbl.AutoSize = true;
-            this.constOrVarLbl.Location = new System.Drawing.Point(25, 47);
-            this.constOrVarLbl.Name = "constOrVarLbl";
-            this.constOrVarLbl.Size = new System.Drawing.Size(66, 13);
-            this.constOrVarLbl.TabIndex = 1;
-            this.constOrVarLbl.Text = "Fan Volume:";
+            this.sfconstOrVarLbl.AutoSize = true;
+            this.sfconstOrVarLbl.Location = new System.Drawing.Point(25, 47);
+            this.sfconstOrVarLbl.Name = "sfconstOrVarLbl";
+            this.sfconstOrVarLbl.Size = new System.Drawing.Size(66, 13);
+            this.sfconstOrVarLbl.TabIndex = 1;
+            this.sfconstOrVarLbl.Text = "Fan Volume:";
             // 
-            // countLbl
+            // sfCountLbl
             // 
-            this.countLbl.AutoSize = true;
-            this.countLbl.Location = new System.Drawing.Point(6, 20);
-            this.countLbl.Name = "countLbl";
-            this.countLbl.Size = new System.Drawing.Size(85, 13);
-            this.countLbl.TabIndex = 0;
-            this.countLbl.Text = "Number of Fans:";
+            this.sfCountLbl.AutoSize = true;
+            this.sfCountLbl.Location = new System.Drawing.Point(6, 20);
+            this.sfCountLbl.Name = "sfCountLbl";
+            this.sfCountLbl.Size = new System.Drawing.Size(85, 13);
+            this.sfCountLbl.TabIndex = 0;
+            this.sfCountLbl.Text = "Number of Fans:";
             // 
             // heatingTab
             // 
@@ -444,22 +687,13 @@
             // 
             // nextBtn
             // 
-            this.nextBtn.Location = new System.Drawing.Point(93, 415);
+            this.nextBtn.Enabled = false;
+            this.nextBtn.Location = new System.Drawing.Point(12, 415);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(75, 23);
             this.nextBtn.TabIndex = 15;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
-            // 
-            // backBtn
-            // 
-            this.backBtn.Location = new System.Drawing.Point(12, 415);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
-            this.backBtn.TabIndex = 16;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // closeBtn
             // 
@@ -479,7 +713,6 @@
             this.CancelButton = this.closeBtn;
             this.ClientSize = new System.Drawing.Size(668, 450);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.backBtn);
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.ahuTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -492,6 +725,10 @@
             this.lltPanel.ResumeLayout(false);
             this.lltPanel.PerformLayout();
             this.fansTab.ResumeLayout(false);
+            this.rlfExhFanGroupBox.ResumeLayout(false);
+            this.rlfExhFanGroupBox.PerformLayout();
+            this.returnFanGroupBox.ResumeLayout(false);
+            this.returnFanGroupBox.PerformLayout();
             this.supplyFanGroupBox.ResumeLayout(false);
             this.supplyFanGroupBox.PerformLayout();
             this.ResumeLayout(false);
@@ -511,7 +748,6 @@
         private System.Windows.Forms.TabPage alarmingTab;
         private System.Windows.Forms.TabPage controllerTab;
         private System.Windows.Forms.Button nextBtn;
-        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button closeBtn;
         private System.Windows.Forms.TabPage safetiesTab;
         private System.Windows.Forms.CheckBox supplySmokeCheckBox;
@@ -528,15 +764,37 @@
         private System.Windows.Forms.ComboBox lltLengthsCb;
         private System.Windows.Forms.Label lltLengthLbl;
         private System.Windows.Forms.GroupBox supplyFanGroupBox;
-        private System.Windows.Forms.Label fanStatusLbl;
-        private System.Windows.Forms.Label constOrVarLbl;
-        private System.Windows.Forms.Label countLbl;
-        private System.Windows.Forms.ComboBox fanStatusCb;
-        private System.Windows.Forms.ComboBox fanVolCb;
-        private System.Windows.Forms.ComboBox fanCountCb;
-        private System.Windows.Forms.Label fanVolSourceLbl;
-        private System.Windows.Forms.ComboBox fanVolSourceCb;
-        private System.Windows.Forms.ComboBox bacnetCommCb;
-        private System.Windows.Forms.Label bacnetCommLbl;
+        private System.Windows.Forms.Label sfanStatusLbl;
+        private System.Windows.Forms.Label sfconstOrVarLbl;
+        private System.Windows.Forms.Label sfCountLbl;
+        private System.Windows.Forms.ComboBox sfanStatusCb;
+        private System.Windows.Forms.ComboBox sfanVolCb;
+        private System.Windows.Forms.ComboBox sfanCountCb;
+        private System.Windows.Forms.Label sfanVolSourceLbl;
+        private System.Windows.Forms.ComboBox sfanVolSourceCb;
+        private System.Windows.Forms.ComboBox sfBacnetCommCb;
+        private System.Windows.Forms.Label sfBacnetCommLbl;
+        private System.Windows.Forms.GroupBox rlfExhFanGroupBox;
+        private System.Windows.Forms.ComboBox rlfExhBacnetCommCb;
+        private System.Windows.Forms.Label rlfExhBacnetCommLbl;
+        private System.Windows.Forms.ComboBox rlfExhFanVolSourceCb;
+        private System.Windows.Forms.Label rlfExhFanVolSourceLbl;
+        private System.Windows.Forms.ComboBox rlfExhFanStatusCb;
+        private System.Windows.Forms.ComboBox rlfExhFanVolCb;
+        private System.Windows.Forms.ComboBox rlfExhFanCountCb;
+        private System.Windows.Forms.Label rlfExhFanStatusLbl;
+        private System.Windows.Forms.Label rlfExhVolumeLbl;
+        private System.Windows.Forms.Label rlfExhCountLbl;
+        private System.Windows.Forms.GroupBox returnFanGroupBox;
+        private System.Windows.Forms.ComboBox rfBacnetCommCb;
+        private System.Windows.Forms.Label rfBacnetCommLbl;
+        private System.Windows.Forms.ComboBox rfanVolSourceCb;
+        private System.Windows.Forms.Label rfanVolSourceLbl;
+        private System.Windows.Forms.ComboBox rfanStatusCb;
+        private System.Windows.Forms.ComboBox rfanVolCb;
+        private System.Windows.Forms.ComboBox rfanCountCb;
+        private System.Windows.Forms.Label rfanStatusLbl;
+        private System.Windows.Forms.Label rfVolumeLbl;
+        private System.Windows.Forms.Label rfCountLbl;
     }
 }

@@ -97,6 +97,8 @@ namespace Engineering_Project_Creation
             installer = instInitTb.Text;
             mainWindow = this;
 
+            
+
             var equipSetupForm = new AhuEquipmentSetup();
             equipSetupForm.ShowDialog();
 
@@ -109,6 +111,19 @@ namespace Engineering_Project_Creation
             //this.customer = custTb.Text;
             //string cust = this.customer;
 
+        }
+
+        private void revCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (revCb.Text != "Revision")
+            {
+                revNumCb.Enabled = false;
+            }
+
+            if (revCb.Text == "Revision")
+            {
+                revNumCb.Enabled = true;
+            }
         }
     }
 }

@@ -13,27 +13,47 @@ namespace Drawing_Creation
 {
     public partial class AhuEquipmentSetup : Form
     {
-
+        // Fields
         public Control info = MainWindow.mainWindow;
+        private List<string> lltLengths = new List<string>()
+            {
+                "6'",
+                "10'",
+                "20'"
+            };
+        private List<string> constFanStatuses = new List<string>()
+                {
+                    "Switch",
+                    "Analog"
+                };
+        private List<string> varFanStatuses = new List<string>()
+                {
+                    "VFD",
+                    "ECM"
+                };
+        private List<string> fanVolumes = new List<string>()
+            {
+                "Constant Volume",
+                "Variable Air Volume"
+            };
+        private List<string> volumeSources = new List<string>()
+                {
+                    "VFD",
+                    "ECM",
+                    "Turning Vanes"
+                };
+        private List<string> bacnetCommOptions = new List<string>()
+                {
+                    "Yes",
+                    "No"
+                };
 
         //Constructor
         public AhuEquipmentSetup()
         {
             InitializeComponent();
 
-            foreach (var item in info.Controls)
-            {
-                Console.WriteLine(item);
-            }
-
             //Low Limit Lengths Combo Box
-            List<string> lltLengths = new List<string>()
-            {
-                "6'",
-                "10'",
-                "20'"
-            };
-
             foreach (string length in lltLengths)
             {
                 lltLengthsCb.Items.Add(length);
@@ -41,7 +61,7 @@ namespace Drawing_Creation
 
             //Supply Fan Combo Boxes
             //number of Fans. Accounts for a fan wall.
-            List<string> fanCounts = new List<string>()
+            List<string> sfanCounts = new List<string>()
             {
                 "1",
                 "2",
@@ -49,117 +69,193 @@ namespace Drawing_Creation
                 "8"
             };
 
-            foreach(string fanCount in fanCounts)
+            foreach(string fanCount in sfanCounts)
             {
-                fanCountCb.Items.Add(fanCount);
+                sfanCountCb.Items.Add(fanCount);
             }
+
+            sfanCountCb.SelectedIndex = 0;
 
             //fan volume
-            List<string> fanVolumes = new List<string>()
+            foreach (string sfanVolume in fanVolumes)
             {
-                "Constant Volume",
-                "Variable Air Volume"
-            };
-            foreach (string fanVolume in fanVolumes)
-            {
-                fanVolCb.Items.Add(fanVolume);
+                sfanVolCb.Items.Add(sfanVolume);
             }
 
+            sfanVolCb.SelectedIndex = 0;
+            sfanStatusCb.SelectedIndex = 0;
+
+
+            //Return Fan Combo Boxes
+            //number of Fans. Accounts for a fan wall.
+            List<string> rfanCounts = new List<string>()
+            {
+                "0",
+                "1",
+                "2",
+                "4",
+                "8"
+            };
+
+            foreach (string fanCount in rfanCounts)
+            {
+                rfanCountCb.Items.Add(fanCount);
+            }
+
+            rfanCountCb.SelectedIndex = 0;
+
+            //fan volume
+            foreach (string rfanVolume in fanVolumes)
+                {
+                    rfanVolCb.Items.Add(rfanVolume);
+                }
+                        
         }
 
+        //Class Methods
         private void closeBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void backBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void lltCheckBox_Clicked(object sender, EventArgs e)
         {
             lltLengthsCb.Enabled = lltCheckBox.Checked;
             lltManResetRadioBtn.Enabled = lltCheckBox.Checked;
             lltAutoResetRadioBtn.Enabled = lltCheckBox.Checked;
         }
-
-        private void fanVolCb_SelectedIndexChanged(object sender, EventArgs e)
+        private void sfanVolCb_TextChanged(object sender, EventArgs e)
         {
-            fanStatusCb.Items.Clear();
-            fanVolSourceCb.Items.Clear();
-            bacnetCommCb.Items.Clear();
+            sfanStatusCb.Items.Clear();
+            sfanVolSourceCb.Items.Clear();
+            sfBacnetCommCb.Items.Clear();
 
-            if (fanVolCb.Text == "Constant Volume")
+            if (sfanVolCb.Text == "")
             {
-                fanStatusCb.Enabled = true;
-                fanVolSourceCb.Enabled = false;
-                bacnetCommCb.Enabled = false;
+                sfanStatusCb.Enabled = false;
+                sfanVolSourceCb.Enabled = false;
+                sfBacnetCommCb.Enabled = false;
+                
+                sfanStatusCb.Text = "";
+                sfanVolSourceCb.Text = "";
+                sfBacnetCommCb.Text = "";
+            }
 
-                fanStatusCb.Text = "";
-                fanVolSourceCb.Text = "";
-                bacnetCommCb.Text = "";
+            if (sfanVolCb.Text == "Constant Volume")
+            {
+                sfanStatusCb.Enabled = true;
+                sfanVolSourceCb.Enabled = false;
+                sfBacnetCommCb.Enabled = false;
+
+                sfanVolSourceCb.Text = "";
+                sfBacnetCommCb.Text = "";
 
                 //fan status
-                List<string> fanStatuses = new List<string>()
+                foreach (string sfanStatus in constFanStatuses)
                 {
-                    "Binary",
-                    "Analog"
-                };
+                    sfanStatusCb.Items.Add(sfanStatus);
+                }
 
-                foreach (string fanStatus in fanStatuses)
+                sfanStatusCb.SelectedIndex = 0;
+            }
+
+            if (sfanVolCb.Text == "Variable Air Volume")
+            {
+                sfanStatusCb.Enabled = true;
+                sfanVolSourceCb.Enabled = true;
+                sfBacnetCommCb.Enabled = true;
+
+                //fan status
+                foreach (string fanStatus in varFanStatuses)
                 {
-                    fanStatusCb.Items.Add(fanStatus);
+                    sfanStatusCb.Items.Add(fanStatus);
+                }
+                sfanStatusCb.SelectedIndex = 0;
+
+                //fan volume source
+                foreach (string volumeSource in volumeSources)
+                {
+                    sfanVolSourceCb.Items.Add(volumeSource);
+                }
+                sfanVolSourceCb.SelectedIndex = 0;
+
+
+                //bacnet communication
+                foreach (string bacnetOption in bacnetCommOptions)
+                {
+                    sfBacnetCommCb.Items.Add(bacnetOption);
+                }
+                sfBacnetCommCb.SelectedIndex = 0;
+            }
+        }
+
+        private void rfanCountCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int numOfFans = Convert.ToInt32(rfanCountCb.Text);
+
+            if (numOfFans > 0)
+            {
+                rfanVolCb.Enabled = true;
+                rfanVolCb.SelectedIndex = 0;
+                rfanStatusCb.Enabled = true;
+                rfanStatusCb.SelectedIndex = 0;
+            }
+
+            if (numOfFans < 1)
+            {
+                rfanVolCb.Enabled = false;
+                rfanStatusCb.Enabled = false;
+            }
+        }
+        private void rfanVolCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            rfanStatusCb.Items.Clear();
+            rfanVolSourceCb.Items.Clear();
+            rfBacnetCommCb.Items.Clear();
+
+            if (rfanVolCb.Text == "Constant Volume")
+            {
+                rfanStatusCb.Enabled = true;
+                rfanVolSourceCb.Enabled = false;
+                rfBacnetCommCb.Enabled = false;
+
+                rfanStatusCb.Text = "";
+                rfanVolSourceCb.Text = "";
+                rfBacnetCommCb.Text = "";
+
+                //fan status
+                foreach (string rfanStatus in constFanStatuses)
+                {
+                    rfanStatusCb.Items.Add(rfanStatus);
                 }
             }
 
-            if (fanVolCb.Text == "Variable Air Volume")
+            if (rfanVolCb.Text == "Variable Air Volume")
             {
-                fanStatusCb.Enabled = true;
-                fanVolSourceCb.Enabled = true;
-                bacnetCommCb.Enabled = true;
+                rfanStatusCb.Enabled = true;
+                rfanVolSourceCb.Enabled = true;
+                rfBacnetCommCb.Enabled = true;
 
-                fanStatusCb.Text = "";
+                rfanStatusCb.Text = "";
 
                 //fan status
-                List<string> fanStatuses = new List<string>()
+                foreach (string fanStatus in varFanStatuses)
                 {
-                    "Binary",
-                    "Analog",
-                    "VFD", 
-                    "ECM"
-                };
-
-                foreach (string fanStatus in fanStatuses)
-                {
-                    fanStatusCb.Items.Add(fanStatus);
+                    rfanStatusCb.Items.Add(fanStatus);
                 }
 
                 //fan volume source
-                List<string> volumeSources = new List<string>()
+                foreach (string volumeSource in volumeSources)
                 {
-                    "VFD",
-                    "ECM",
-                    "Turning Vanes"
-                };
-
-                foreach(string volumeSource in volumeSources)
-                {
-                    fanVolSourceCb.Items.Add(volumeSource);
+                    rfanVolSourceCb.Items.Add(volumeSource);
                 }
 
                 //bacnet communication
-                List<string> bacnetCommOptions = new List<string>()
-                {
-                    "Yes",
-                    "No"
-                };
-
                 foreach (string bacnetOption in bacnetCommOptions)
                 {
-                    bacnetCommCb.Items.Add(bacnetOption);
+                    rfBacnetCommCb.Items.Add(bacnetOption);
                 }
             }
+
         }
     }
 }
