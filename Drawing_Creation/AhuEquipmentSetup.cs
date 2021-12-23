@@ -48,6 +48,19 @@ namespace Drawing_Creation
                     "Yes",
                     "No"
                 };
+        private List<string> preheatTypes = new List<string>()
+        {
+            "Hydronic (Glycol)",
+            "Heat Wheel",
+            "Electric"
+        };
+        private List<string> heatTypes = new List<string>()
+        {
+            "Hydronic",
+            "Gas Heat",
+            "Electric",
+            "Steam"
+        };
 
         //Constructor
         public AhuEquipmentSetup()
@@ -133,6 +146,12 @@ namespace Drawing_Creation
             foreach (string rlfExhFanVolume in fanVolumes)
             {
                 rlfExhFanVolCb.Items.Add(rlfExhFanVolume);
+            }
+
+            //Heating Types Combo Box
+            foreach (string heatType in heatTypes)
+            {
+                heatTypeCb.Items.Add(heatType);
             }
         }
 
@@ -355,6 +374,72 @@ namespace Drawing_Creation
                     rlfExhBacnetCommCb.Items.Add(bacnetOption);
                 }
                 rlfExhBacnetCommCb.SelectedIndex = 0;
+            }
+        }
+        private void preheatAvailCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (preheatAvailCheckBox.Checked)
+            {
+                preheatTypeCb.Enabled = true;
+                foreach(string preheatType in preheatTypes)
+                {
+                    preheatTypeCb.Items.Add(preheatType);
+                }
+            }
+
+            if (!preheatAvailCheckBox.Checked)
+            {
+                preheatTypeCb.Enabled = false;
+                preheatTypeCb.Text = "";
+                preheatTypeCb.Items.Clear();
+            }
+        }
+        private void preheatTypeCb_TextChanged(object sender, EventArgs e)
+        {
+            preheatTypeSelectedDetailCb.Items.Clear();
+
+            if (preheatTypeCb.Text == "")
+            {
+                preheatTypeSelectedLbl.Text = ":";
+                preheatTypeSelectedLbl.Visible = false;
+                preheatTypeSelectedDetailCb.Enabled = false;
+                preheatTypeSelectedDetailCb.Visible = false;
+            }
+
+            if (preheatTypeCb.Text == "Hydronic (Glycol)")
+            {
+                preheatTypeSelectedLbl.Text = "Valve Type:";
+                preheatTypeSelectedLbl.Visible = true;
+                preheatTypeSelectedDetailCb.Enabled = true;
+                preheatTypeSelectedDetailCb.Visible = true;
+                preheatTypeSelectedDetailCb.Text = "";
+                preheatTypeSelectedDetailCb.Items.Add("Analog");
+                preheatTypeSelectedDetailCb.Items.Add("Floating");
+                preheatTypeSelectedDetailCb.Items.Add("No valve. Pump Only.");
+            }
+
+            if (preheatTypeCb.Text == "Heat Wheel")
+            {
+                preheatTypeSelectedLbl.Text = "Motor:";
+                preheatTypeSelectedLbl.Visible = true;
+                preheatTypeSelectedDetailCb.Enabled = true;
+                preheatTypeSelectedDetailCb.Visible = true;
+                preheatTypeSelectedDetailCb.Text = "";
+                preheatTypeSelectedDetailCb.Items.Add("Constant");
+                preheatTypeSelectedDetailCb.Items.Add("VFD");
+            }
+
+            if (preheatTypeCb.Text == "Electric")
+            {
+                preheatTypeSelectedLbl.Text = "Stages:";
+                preheatTypeSelectedLbl.Visible = true;
+                preheatTypeSelectedDetailCb.Enabled = true;
+                preheatTypeSelectedDetailCb.Visible = true;
+                preheatTypeSelectedDetailCb.Text = "";
+                for (int i = 1; i < 5; i++)
+                {
+                    preheatTypeSelectedDetailCb.Items.Add(i);
+                }
             }
         }
     }
