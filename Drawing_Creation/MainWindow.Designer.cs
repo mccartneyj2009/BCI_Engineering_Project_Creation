@@ -147,49 +147,49 @@
             this.custTb.Location = new System.Drawing.Point(93, 17);
             this.custTb.Name = "custTb";
             this.custTb.Size = new System.Drawing.Size(164, 20);
-            this.custTb.TabIndex = 10;
+            this.custTb.TabIndex = 0;
             // 
             // projNameTb
             // 
             this.projNameTb.Location = new System.Drawing.Point(93, 54);
             this.projNameTb.Name = "projNameTb";
             this.projNameTb.Size = new System.Drawing.Size(164, 20);
-            this.projNameTb.TabIndex = 11;
+            this.projNameTb.TabIndex = 1;
             // 
             // sysNameTb
             // 
             this.sysNameTb.Location = new System.Drawing.Point(93, 128);
             this.sysNameTb.Name = "sysNameTb";
             this.sysNameTb.Size = new System.Drawing.Size(164, 20);
-            this.sysNameTb.TabIndex = 13;
+            this.sysNameTb.TabIndex = 3;
             // 
             // projNumTb
             // 
             this.projNumTb.Location = new System.Drawing.Point(93, 91);
             this.projNumTb.Name = "projNumTb";
             this.projNumTb.Size = new System.Drawing.Size(164, 20);
-            this.projNumTb.TabIndex = 12;
+            this.projNumTb.TabIndex = 2;
             // 
             // desInitTb
             // 
             this.desInitTb.Location = new System.Drawing.Point(93, 313);
             this.desInitTb.Name = "desInitTb";
             this.desInitTb.Size = new System.Drawing.Size(164, 20);
-            this.desInitTb.TabIndex = 13;
+            this.desInitTb.TabIndex = 8;
             // 
             // instInitTb
             // 
             this.instInitTb.Location = new System.Drawing.Point(93, 350);
             this.instInitTb.Name = "instInitTb";
             this.instInitTb.Size = new System.Drawing.Size(164, 20);
-            this.instInitTb.TabIndex = 12;
+            this.instInitTb.TabIndex = 9;
             // 
             // nextBtn
             // 
             this.nextBtn.Location = new System.Drawing.Point(208, 384);
             this.nextBtn.Name = "nextBtn";
             this.nextBtn.Size = new System.Drawing.Size(75, 23);
-            this.nextBtn.TabIndex = 14;
+            this.nextBtn.TabIndex = 10;
             this.nextBtn.Text = "Next";
             this.nextBtn.UseVisualStyleBackColor = true;
             this.nextBtn.Click += new System.EventHandler(this.nextBtn_Click);
@@ -199,7 +199,7 @@
             this.closeBtn.Location = new System.Drawing.Point(208, 413);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(75, 23);
-            this.closeBtn.TabIndex = 14;
+            this.closeBtn.TabIndex = 11;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
@@ -211,7 +211,7 @@
             this.revNumCb.Location = new System.Drawing.Point(93, 239);
             this.revNumCb.Name = "revNumCb";
             this.revNumCb.Size = new System.Drawing.Size(164, 21);
-            this.revNumCb.TabIndex = 15;
+            this.revNumCb.TabIndex = 6;
             // 
             // drawingNumCb
             // 
@@ -219,7 +219,7 @@
             this.drawingNumCb.Location = new System.Drawing.Point(93, 276);
             this.drawingNumCb.Name = "drawingNumCb";
             this.drawingNumCb.Size = new System.Drawing.Size(164, 21);
-            this.drawingNumCb.TabIndex = 15;
+            this.drawingNumCb.TabIndex = 7;
             // 
             // revCb
             // 
@@ -227,7 +227,7 @@
             this.revCb.Location = new System.Drawing.Point(93, 202);
             this.revCb.Name = "revCb";
             this.revCb.Size = new System.Drawing.Size(164, 21);
-            this.revCb.TabIndex = 15;
+            this.revCb.TabIndex = 5;
             this.revCb.SelectedIndexChanged += new System.EventHandler(this.revCb_SelectedIndexChanged);
             // 
             // sysTypeCb
@@ -236,7 +236,7 @@
             this.sysTypeCb.Location = new System.Drawing.Point(93, 165);
             this.sysTypeCb.Name = "sysTypeCb";
             this.sysTypeCb.Size = new System.Drawing.Size(164, 21);
-            this.sysTypeCb.TabIndex = 16;
+            this.sysTypeCb.TabIndex = 4;
             // 
             // MainWindow
             // 

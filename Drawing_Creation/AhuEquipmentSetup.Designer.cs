@@ -98,6 +98,9 @@
             // 
             // ahuTabControl
             // 
+            this.ahuTabControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ahuTabControl.Controls.Add(this.safetiesTab);
             this.ahuTabControl.Controls.Add(this.fansTab);
             this.ahuTabControl.Controls.Add(this.heatingTab);
@@ -147,7 +150,7 @@
             this.returnSmokeCheckBox.Location = new System.Drawing.Point(10, 332);
             this.returnSmokeCheckBox.Name = "returnSmokeCheckBox";
             this.returnSmokeCheckBox.Size = new System.Drawing.Size(138, 17);
-            this.returnSmokeCheckBox.TabIndex = 8;
+            this.returnSmokeCheckBox.TabIndex = 10;
             this.returnSmokeCheckBox.Text = "Return Smoke Detector";
             this.returnSmokeCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +160,7 @@
             this.returnSPLLCheckBox.Location = new System.Drawing.Point(10, 226);
             this.returnSPLLCheckBox.Name = "returnSPLLCheckBox";
             this.returnSPLLCheckBox.Size = new System.Drawing.Size(179, 17);
-            this.returnSPLLCheckBox.TabIndex = 7;
+            this.returnSPLLCheckBox.TabIndex = 8;
             this.returnSPLLCheckBox.Text = "Return Static Pressure Low Limit";
             this.returnSPLLCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +170,7 @@
             this.returnSPHLCheckBox.Location = new System.Drawing.Point(10, 173);
             this.returnSPHLCheckBox.Name = "returnSPHLCheckBox";
             this.returnSPHLCheckBox.Size = new System.Drawing.Size(181, 17);
-            this.returnSPHLCheckBox.TabIndex = 6;
+            this.returnSPHLCheckBox.TabIndex = 7;
             this.returnSPHLCheckBox.Text = "Return Static Pressure High Limit";
             this.returnSPHLCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +180,7 @@
             this.supplySPLLCheckBox.Location = new System.Drawing.Point(10, 120);
             this.supplySPLLCheckBox.Name = "supplySPLLCheckBox";
             this.supplySPLLCheckBox.Size = new System.Drawing.Size(179, 17);
-            this.supplySPLLCheckBox.TabIndex = 5;
+            this.supplySPLLCheckBox.TabIndex = 6;
             this.supplySPLLCheckBox.Text = "Supply Static Pressure Low Limit";
             this.supplySPLLCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -187,7 +190,7 @@
             this.supplySPHLCheckBox.Location = new System.Drawing.Point(10, 67);
             this.supplySPHLCheckBox.Name = "supplySPHLCheckBox";
             this.supplySPHLCheckBox.Size = new System.Drawing.Size(181, 17);
-            this.supplySPHLCheckBox.TabIndex = 4;
+            this.supplySPHLCheckBox.TabIndex = 5;
             this.supplySPHLCheckBox.Text = "Supply Static Pressure High Limit";
             this.supplySPHLCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -211,7 +214,7 @@
             this.lltManResetRadioBtn.Location = new System.Drawing.Point(483, 3);
             this.lltManResetRadioBtn.Name = "lltManResetRadioBtn";
             this.lltManResetRadioBtn.Size = new System.Drawing.Size(60, 17);
-            this.lltManResetRadioBtn.TabIndex = 6;
+            this.lltManResetRadioBtn.TabIndex = 3;
             this.lltManResetRadioBtn.TabStop = true;
             this.lltManResetRadioBtn.Text = "Manual";
             this.lltManResetRadioBtn.UseVisualStyleBackColor = true;
@@ -243,7 +246,7 @@
             this.lltCheckBox.Location = new System.Drawing.Point(4, 4);
             this.lltCheckBox.Name = "lltCheckBox";
             this.lltCheckBox.Size = new System.Drawing.Size(126, 17);
-            this.lltCheckBox.TabIndex = 3;
+            this.lltCheckBox.TabIndex = 1;
             this.lltCheckBox.Text = "Low Limit Thermostat";
             this.lltCheckBox.UseVisualStyleBackColor = true;
             this.lltCheckBox.Click += new System.EventHandler(this.lltCheckBox_Clicked);
@@ -281,6 +284,8 @@
             // 
             // rlfExhFanGroupBox
             // 
+            this.rlfExhFanGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.rlfExhFanGroupBox.Controls.Add(this.rlfExhBacnetCommCb);
             this.rlfExhFanGroupBox.Controls.Add(this.rlfExhBacnetCommLbl);
             this.rlfExhFanGroupBox.Controls.Add(this.rlfExhFanVolSourceCb);
@@ -305,7 +310,7 @@
             this.rlfExhBacnetCommCb.Location = new System.Drawing.Point(379, 44);
             this.rlfExhBacnetCommCb.Name = "rlfExhBacnetCommCb";
             this.rlfExhBacnetCommCb.Size = new System.Drawing.Size(121, 21);
-            this.rlfExhBacnetCommCb.TabIndex = 9;
+            this.rlfExhBacnetCommCb.TabIndex = 14;
             // 
             // rlfExhBacnetCommLbl
             // 
@@ -323,7 +328,7 @@
             this.rlfExhFanVolSourceCb.Location = new System.Drawing.Point(97, 71);
             this.rlfExhFanVolSourceCb.Name = "rlfExhFanVolSourceCb";
             this.rlfExhFanVolSourceCb.Size = new System.Drawing.Size(121, 21);
-            this.rlfExhFanVolSourceCb.TabIndex = 7;
+            this.rlfExhFanVolSourceCb.TabIndex = 12;
             // 
             // rlfExhFanVolSourceLbl
             // 
@@ -341,7 +346,7 @@
             this.rlfExhFanStatusCb.Location = new System.Drawing.Point(379, 17);
             this.rlfExhFanStatusCb.Name = "rlfExhFanStatusCb";
             this.rlfExhFanStatusCb.Size = new System.Drawing.Size(121, 21);
-            this.rlfExhFanStatusCb.TabIndex = 5;
+            this.rlfExhFanStatusCb.TabIndex = 13;
             // 
             // rlfExhFanVolCb
             // 
@@ -350,7 +355,8 @@
             this.rlfExhFanVolCb.Location = new System.Drawing.Point(97, 44);
             this.rlfExhFanVolCb.Name = "rlfExhFanVolCb";
             this.rlfExhFanVolCb.Size = new System.Drawing.Size(121, 21);
-            this.rlfExhFanVolCb.TabIndex = 4;
+            this.rlfExhFanVolCb.TabIndex = 11;
+            this.rlfExhFanVolCb.TextChanged += new System.EventHandler(this.rlfExhFanVolCb_TextChanged);
             // 
             // rlfExhFanCountCb
             // 
@@ -358,7 +364,8 @@
             this.rlfExhFanCountCb.Location = new System.Drawing.Point(97, 17);
             this.rlfExhFanCountCb.Name = "rlfExhFanCountCb";
             this.rlfExhFanCountCb.Size = new System.Drawing.Size(121, 21);
-            this.rlfExhFanCountCb.TabIndex = 3;
+            this.rlfExhFanCountCb.TabIndex = 10;
+            this.rlfExhFanCountCb.TextChanged += new System.EventHandler(this.rlfExhFanCountCb_TextChanged);
             // 
             // rlfExhFanStatusLbl
             // 
@@ -389,6 +396,7 @@
             // 
             // returnFanGroupBox
             // 
+            this.returnFanGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.returnFanGroupBox.Controls.Add(this.rfBacnetCommCb);
             this.returnFanGroupBox.Controls.Add(this.rfBacnetCommLbl);
             this.returnFanGroupBox.Controls.Add(this.rfanVolSourceCb);
@@ -449,7 +457,7 @@
             this.rfanStatusCb.Location = new System.Drawing.Point(379, 17);
             this.rfanStatusCb.Name = "rfanStatusCb";
             this.rfanStatusCb.Size = new System.Drawing.Size(121, 21);
-            this.rfanStatusCb.TabIndex = 5;
+            this.rfanStatusCb.TabIndex = 8;
             // 
             // rfanVolCb
             // 
@@ -458,8 +466,8 @@
             this.rfanVolCb.Location = new System.Drawing.Point(97, 44);
             this.rfanVolCb.Name = "rfanVolCb";
             this.rfanVolCb.Size = new System.Drawing.Size(121, 21);
-            this.rfanVolCb.TabIndex = 4;
-            this.rfanVolCb.SelectedIndexChanged += new System.EventHandler(this.rfanVolCb_SelectedIndexChanged);
+            this.rfanVolCb.TabIndex = 6;
+            this.rfanVolCb.TextChanged += new System.EventHandler(this.rfanVolCb_TextChanged);
             // 
             // rfanCountCb
             // 
@@ -467,8 +475,8 @@
             this.rfanCountCb.Location = new System.Drawing.Point(97, 17);
             this.rfanCountCb.Name = "rfanCountCb";
             this.rfanCountCb.Size = new System.Drawing.Size(121, 21);
-            this.rfanCountCb.TabIndex = 3;
-            this.rfanCountCb.SelectedIndexChanged += new System.EventHandler(this.rfanCountCb_SelectedIndexChanged);
+            this.rfanCountCb.TabIndex = 5;
+            this.rfanCountCb.TextChanged += new System.EventHandler(this.rfanCountCb_TextChanged);
             // 
             // rfanStatusLbl
             // 
@@ -499,6 +507,8 @@
             // 
             // supplyFanGroupBox
             // 
+            this.supplyFanGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.supplyFanGroupBox.Controls.Add(this.sfBacnetCommCb);
             this.supplyFanGroupBox.Controls.Add(this.sfBacnetCommLbl);
             this.supplyFanGroupBox.Controls.Add(this.sfanVolSourceCb);
@@ -523,7 +533,7 @@
             this.sfBacnetCommCb.Location = new System.Drawing.Point(379, 44);
             this.sfBacnetCommCb.Name = "sfBacnetCommCb";
             this.sfBacnetCommCb.Size = new System.Drawing.Size(121, 21);
-            this.sfBacnetCommCb.TabIndex = 9;
+            this.sfBacnetCommCb.TabIndex = 4;
             // 
             // sfBacnetCommLbl
             // 
@@ -541,7 +551,7 @@
             this.sfanVolSourceCb.Location = new System.Drawing.Point(97, 71);
             this.sfanVolSourceCb.Name = "sfanVolSourceCb";
             this.sfanVolSourceCb.Size = new System.Drawing.Size(121, 21);
-            this.sfanVolSourceCb.TabIndex = 7;
+            this.sfanVolSourceCb.TabIndex = 2;
             // 
             // sfanVolSourceLbl
             // 
@@ -559,7 +569,7 @@
             this.sfanStatusCb.Location = new System.Drawing.Point(379, 17);
             this.sfanStatusCb.Name = "sfanStatusCb";
             this.sfanStatusCb.Size = new System.Drawing.Size(121, 21);
-            this.sfanStatusCb.TabIndex = 5;
+            this.sfanStatusCb.TabIndex = 3;
             // 
             // sfanVolCb
             // 
@@ -567,7 +577,7 @@
             this.sfanVolCb.Location = new System.Drawing.Point(97, 44);
             this.sfanVolCb.Name = "sfanVolCb";
             this.sfanVolCb.Size = new System.Drawing.Size(121, 21);
-            this.sfanVolCb.TabIndex = 4;
+            this.sfanVolCb.TabIndex = 1;
             this.sfanVolCb.TextChanged += new System.EventHandler(this.sfanVolCb_TextChanged);
             // 
             // sfanCountCb
@@ -576,7 +586,7 @@
             this.sfanCountCb.Location = new System.Drawing.Point(97, 17);
             this.sfanCountCb.Name = "sfanCountCb";
             this.sfanCountCb.Size = new System.Drawing.Size(121, 21);
-            this.sfanCountCb.TabIndex = 3;
+            this.sfanCountCb.TabIndex = 0;
             // 
             // sfanStatusLbl
             // 
@@ -687,6 +697,7 @@
             // 
             // nextBtn
             // 
+            this.nextBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.nextBtn.Enabled = false;
             this.nextBtn.Location = new System.Drawing.Point(12, 415);
             this.nextBtn.Name = "nextBtn";
@@ -697,11 +708,12 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.closeBtn.Location = new System.Drawing.Point(581, 415);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(75, 23);
-            this.closeBtn.TabIndex = 17;
+            this.closeBtn.TabIndex = 16;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
@@ -716,6 +728,7 @@
             this.Controls.Add(this.nextBtn);
             this.Controls.Add(this.ahuTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AhuEquipmentSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AHU Setup";

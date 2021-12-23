@@ -29,7 +29,8 @@ namespace Drawing_Creation
         private List<string> varFanStatuses = new List<string>()
                 {
                     "VFD",
-                    "ECM"
+                    "ECM",
+                    "Switch"
                 };
         private List<string> fanVolumes = new List<string>()
             {
@@ -109,7 +110,30 @@ namespace Drawing_Creation
                 {
                     rfanVolCb.Items.Add(rfanVolume);
                 }
-                        
+
+            //Relief/Exhaust Fan Combo Boxes
+            //number of Fans. Accounts for a fan wall.
+            List<string> rlfExhFanCounts = new List<string>()
+            {
+                "0",
+                "1",
+                "2",
+                "4",
+                "8"
+            };
+
+            foreach (string fanCount in rlfExhFanCounts)
+            {
+                rlfExhFanCountCb.Items.Add(fanCount);
+            }
+
+            rlfExhFanCountCb.SelectedIndex = 0;
+
+            //fan volume
+            foreach (string rlfExhFanVolume in fanVolumes)
+            {
+                rlfExhFanVolCb.Items.Add(rlfExhFanVolume);
+            }
         }
 
         //Class Methods
@@ -187,75 +211,151 @@ namespace Drawing_Creation
                 sfBacnetCommCb.SelectedIndex = 0;
             }
         }
-
-        private void rfanCountCb_SelectedIndexChanged(object sender, EventArgs e)
+        private void rfanCountCb_TextChanged(object sender, EventArgs e)
         {
-            int numOfFans = Convert.ToInt32(rfanCountCb.Text);
 
-            if (numOfFans > 0)
-            {
-                rfanVolCb.Enabled = true;
-                rfanVolCb.SelectedIndex = 0;
-                rfanStatusCb.Enabled = true;
-                rfanStatusCb.SelectedIndex = 0;
-            }
-
-            if (numOfFans < 1)
+            if (rfanCountCb.Text == "0")
             {
                 rfanVolCb.Enabled = false;
+                rfanVolSourceCb.Enabled=false;
                 rfanStatusCb.Enabled = false;
+                rfBacnetCommCb.Enabled=false;
+
+                rfanVolCb.Text = "";
+                rfanVolSourceCb.Text = "";
+                rfanStatusCb.Text = "";
+                rfBacnetCommCb.Text = "";
+            }
+
+            if (rfanCountCb.Text != "0")
+            {
+                rfanVolCb.Enabled = true;
             }
         }
-        private void rfanVolCb_SelectedIndexChanged(object sender, EventArgs e)
+        private void rfanVolCb_TextChanged(object sender, EventArgs e)
         {
-            rfanStatusCb.Items.Clear();
             rfanVolSourceCb.Items.Clear();
+            rfanStatusCb.Items.Clear();
             rfBacnetCommCb.Items.Clear();
 
             if (rfanVolCb.Text == "Constant Volume")
             {
-                rfanStatusCb.Enabled = true;
+                //fan volume source
                 rfanVolSourceCb.Enabled = false;
-                rfBacnetCommCb.Enabled = false;
-
-                rfanStatusCb.Text = "";
                 rfanVolSourceCb.Text = "";
-                rfBacnetCommCb.Text = "";
 
                 //fan status
+                rfanStatusCb.Enabled = true;
                 foreach (string rfanStatus in constFanStatuses)
                 {
                     rfanStatusCb.Items.Add(rfanStatus);
                 }
+                rfanStatusCb.SelectedIndex = 0;
+
+                //bacnet
+                rfBacnetCommCb.Enabled = false;
+                rfBacnetCommCb.Text = "";
             }
 
             if (rfanVolCb.Text == "Variable Air Volume")
             {
-                rfanStatusCb.Enabled = true;
-                rfanVolSourceCb.Enabled = true;
-                rfBacnetCommCb.Enabled = true;
-
-                rfanStatusCb.Text = "";
-
-                //fan status
-                foreach (string fanStatus in varFanStatuses)
-                {
-                    rfanStatusCb.Items.Add(fanStatus);
-                }
-
                 //fan volume source
+                rfanVolSourceCb.Enabled = true;
                 foreach (string volumeSource in volumeSources)
                 {
                     rfanVolSourceCb.Items.Add(volumeSource);
                 }
+                rfanVolSourceCb.SelectedIndex = 0;
+
+                //fan status
+                rfanStatusCb.Enabled = true;
+                foreach (string fanStatus in varFanStatuses)
+                {
+                    rfanStatusCb.Items.Add(fanStatus);
+                }
+                rfanStatusCb.SelectedIndex = 0;
 
                 //bacnet communication
+                rfBacnetCommCb.Enabled = true;
                 foreach (string bacnetOption in bacnetCommOptions)
                 {
                     rfBacnetCommCb.Items.Add(bacnetOption);
                 }
+                rfBacnetCommCb.SelectedIndex = 0;
+            }
+        }
+        private void rlfExhFanCountCb_TextChanged(object sender, EventArgs e)
+        {
+
+            if (rlfExhFanCountCb.Text == "0")
+            {
+                rlfExhFanVolCb.Enabled = false;
+                rlfExhFanVolSourceCb.Enabled = false;
+                rlfExhFanStatusCb.Enabled = false;
+                rlfExhBacnetCommCb.Enabled = false;
+
+                rlfExhFanVolCb.Text = "";
+                rlfExhFanVolSourceCb.Text = "";
+                rlfExhFanStatusCb.Text = "";
+                rlfExhBacnetCommCb.Text = "";
             }
 
+            if (rlfExhFanCountCb.Text != "0")
+            {
+                rlfExhFanVolCb.Enabled = true;
+            }
+        }
+        private void rlfExhFanVolCb_TextChanged(object sender, EventArgs e)
+        {
+            rlfExhFanVolSourceCb.Items.Clear();
+            rlfExhFanStatusCb.Items.Clear();
+            rlfExhBacnetCommCb.Items.Clear();
+
+            if (rlfExhFanVolCb.Text == "Constant Volume")
+            {
+                //fan volume source
+                rlfExhFanVolSourceCb.Enabled = false;
+                rlfExhFanVolSourceCb.Text = "";
+
+                //fan status
+                rlfExhFanStatusCb.Enabled = true;
+                foreach (string rlfExhFanStatus in constFanStatuses)
+                {
+                    rlfExhFanStatusCb.Items.Add(rlfExhFanStatus);
+                }
+                rlfExhFanStatusCb.SelectedIndex = 0;
+
+                //bacnet
+                rlfExhBacnetCommCb.Enabled = false;
+                rlfExhBacnetCommCb.Text = "";
+            }
+
+            if (rlfExhFanVolCb.Text == "Variable Air Volume")
+            {
+                //fan volume source
+                rlfExhFanVolSourceCb.Enabled = true;
+                foreach (string volumeSource in volumeSources)
+                {
+                    rlfExhFanVolSourceCb.Items.Add(volumeSource);
+                }
+                rlfExhFanVolSourceCb.SelectedIndex = 0;
+
+                //fan status
+                rlfExhFanStatusCb.Enabled = true;
+                foreach (string fanStatus in varFanStatuses)
+                {
+                    rlfExhFanStatusCb.Items.Add(fanStatus);
+                }
+                rlfExhFanStatusCb.SelectedIndex = 0;
+
+                //bacnet communication
+                rlfExhBacnetCommCb.Enabled = true;
+                foreach (string bacnetOption in bacnetCommOptions)
+                {
+                    rlfExhBacnetCommCb.Items.Add(bacnetOption);
+                }
+                rlfExhBacnetCommCb.SelectedIndex = 0;
+            }
         }
     }
 }
