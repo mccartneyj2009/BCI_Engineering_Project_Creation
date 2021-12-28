@@ -442,5 +442,90 @@ namespace Drawing_Creation
                 }
             }
         }
+
+        private void heatTypeCb_TextChanged(object sender, EventArgs e)
+        {
+            heatTypeSelectedDetailCb.Items.Clear();
+
+            if (heatTypeCb.Text == "")
+            {
+                heatTypeSelectedLbl.Text = ":";
+                heatTypeSelectedLbl.Visible = false;
+                heatTypeSelectedDetailCb.Enabled = false;
+                heatTypeSelectedDetailCb.Visible = false;
+            }
+
+            if (heatTypeCb.Text == "Hydronic")
+            {
+                heatTypeSelectedLbl.Text = "Valve Type:";
+                heatTypeSelectedLbl.Visible = true;
+                heatTypeSelectedDetailCb.Enabled = true;
+                heatTypeSelectedDetailCb.Visible = true;
+                heatTypeSelectedDetailCb.Text = "";
+                heatTypeSelectedDetailCb.Items.Add("Analog");
+                heatTypeSelectedDetailCb.Items.Add("Floating");
+                heatTypeSelectedDetailCb.Items.Add("No valve");
+            }
+
+            if (heatTypeCb.Text == "Gas Heat")
+            {
+                heatTypeSelectedLbl.Text = "Firing Type:";
+                heatTypeSelectedLbl.Visible = true;
+                heatTypeSelectedDetailCb.Enabled = true;
+                heatTypeSelectedDetailCb.Visible = true;
+                heatTypeSelectedDetailCb.Text = "";
+                heatTypeSelectedDetailCb.Items.Add("Staged");
+                heatTypeSelectedDetailCb.Items.Add("Modulating");
+            }
+
+            if (heatTypeCb.Text == "Electric")
+            {
+                heatTypeSelectedLbl.Text = "Firing Type:";
+                heatTypeSelectedLbl.Visible = true;
+                heatTypeSelectedDetailCb.Enabled = true;
+                heatTypeSelectedDetailCb.Visible = true;
+                heatTypeSelectedDetailCb.Text = "";
+                heatTypeSelectedDetailCb.Items.Add("Staged");
+                heatTypeSelectedDetailCb.Items.Add("Modulating");
+            }
+
+            if (heatTypeCb.Text == "Steam")
+            {
+
+            }
+        }
+        private void heatTypeSelectedCb_TextChanged(object sender, EventArgs e)
+        {
+            heatFollowUpCb.Items.Clear();
+
+            if (heatTypeSelectedDetailCb.Text == "Staged")
+            {
+                heatFollowUpLbl.Text = "Stages:";
+                heatFollowUpLbl.Visible = true;
+                heatFollowUpCb.Text = "";
+                heatFollowUpCb.Enabled = true;
+                heatFollowUpCb.Visible = true;
+                for (int i = 1; i < 5; i++)
+                {
+                    heatFollowUpCb.Items.Add(i);
+                }
+            }
+            else if (heatTypeSelectedDetailCb.Text == "Modulating")
+            {
+                heatFollowUpLbl.Text = "Signal:";
+                heatFollowUpLbl.Visible = true;
+                heatFollowUpCb.Text = "";
+                heatFollowUpCb.Enabled = true;
+                heatFollowUpCb.Visible = true;
+                heatFollowUpCb.Items.Add("0-10VDC");
+                heatFollowUpCb.Items.Add("4-20mA");
+            }
+            else
+            {
+                heatFollowUpLbl.Visible = false;
+                heatFollowUpCb.Visible = false;
+                heatFollowUpCb.Enabled = false;
+            }
+        }
     }
 }

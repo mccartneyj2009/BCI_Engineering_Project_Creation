@@ -79,11 +79,17 @@
             this.sfCountLbl = new System.Windows.Forms.Label();
             this.heatingTab = new System.Windows.Forms.TabPage();
             this.heatingGroupBox = new System.Windows.Forms.GroupBox();
+            this.heatTypePanel = new System.Windows.Forms.Panel();
+            this.heatTypeLbl = new System.Windows.Forms.Label();
+            this.heatTypeCb = new System.Windows.Forms.ComboBox();
+            this.heatTypeSelectedDetailCb = new System.Windows.Forms.ComboBox();
+            this.heatTypeSelectedLbl = new System.Windows.Forms.Label();
             this.preheatGroupBox = new System.Windows.Forms.GroupBox();
+            this.preheatTypePanel = new System.Windows.Forms.Panel();
+            this.preheatTypeLbl = new System.Windows.Forms.Label();
+            this.preheatTypeCb = new System.Windows.Forms.ComboBox();
             this.preheatTypeSelectedDetailCb = new System.Windows.Forms.ComboBox();
             this.preheatTypeSelectedLbl = new System.Windows.Forms.Label();
-            this.preheatTypeCb = new System.Windows.Forms.ComboBox();
-            this.preheatTypeLbl = new System.Windows.Forms.Label();
             this.preheatAvailCheckBox = new System.Windows.Forms.CheckBox();
             this.coolingTab = new System.Windows.Forms.TabPage();
             this.dampersTab = new System.Windows.Forms.TabPage();
@@ -94,12 +100,8 @@
             this.controllerTab = new System.Windows.Forms.TabPage();
             this.nextBtn = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.preheatTypePanel = new System.Windows.Forms.Panel();
-            this.heatTypePanel = new System.Windows.Forms.Panel();
-            this.heatTypeLbl = new System.Windows.Forms.Label();
-            this.heatTypeCb = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.heatFollowUpCb = new System.Windows.Forms.ComboBox();
+            this.heatFollowUpLbl = new System.Windows.Forms.Label();
             this.ahuTabControl.SuspendLayout();
             this.safetiesTab.SuspendLayout();
             this.lltPanel.SuspendLayout();
@@ -109,9 +111,9 @@
             this.supplyFanGroupBox.SuspendLayout();
             this.heatingTab.SuspendLayout();
             this.heatingGroupBox.SuspendLayout();
+            this.heatTypePanel.SuspendLayout();
             this.preheatGroupBox.SuspendLayout();
             this.preheatTypePanel.SuspendLayout();
-            this.heatTypePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ahuTabControl
@@ -655,6 +657,58 @@
             this.heatingGroupBox.TabStop = false;
             this.heatingGroupBox.Text = "Heating Section";
             // 
+            // heatTypePanel
+            // 
+            this.heatTypePanel.Controls.Add(this.heatFollowUpCb);
+            this.heatTypePanel.Controls.Add(this.heatFollowUpLbl);
+            this.heatTypePanel.Controls.Add(this.heatTypeLbl);
+            this.heatTypePanel.Controls.Add(this.heatTypeCb);
+            this.heatTypePanel.Controls.Add(this.heatTypeSelectedDetailCb);
+            this.heatTypePanel.Controls.Add(this.heatTypeSelectedLbl);
+            this.heatTypePanel.Location = new System.Drawing.Point(6, 19);
+            this.heatTypePanel.Name = "heatTypePanel";
+            this.heatTypePanel.Size = new System.Drawing.Size(225, 106);
+            this.heatTypePanel.TabIndex = 7;
+            // 
+            // heatTypeLbl
+            // 
+            this.heatTypeLbl.AutoSize = true;
+            this.heatTypeLbl.Location = new System.Drawing.Point(3, 9);
+            this.heatTypeLbl.Name = "heatTypeLbl";
+            this.heatTypeLbl.Size = new System.Drawing.Size(74, 13);
+            this.heatTypeLbl.TabIndex = 2;
+            this.heatTypeLbl.Text = "Heating Type:";
+            // 
+            // heatTypeCb
+            // 
+            this.heatTypeCb.FormattingEnabled = true;
+            this.heatTypeCb.Location = new System.Drawing.Point(79, 6);
+            this.heatTypeCb.Name = "heatTypeCb";
+            this.heatTypeCb.Size = new System.Drawing.Size(143, 21);
+            this.heatTypeCb.TabIndex = 3;
+            this.heatTypeCb.TextChanged += new System.EventHandler(this.heatTypeCb_TextChanged);
+            // 
+            // heatTypeSelectedDetailCb
+            // 
+            this.heatTypeSelectedDetailCb.Enabled = false;
+            this.heatTypeSelectedDetailCb.FormattingEnabled = true;
+            this.heatTypeSelectedDetailCb.Location = new System.Drawing.Point(79, 44);
+            this.heatTypeSelectedDetailCb.Name = "heatTypeSelectedDetailCb";
+            this.heatTypeSelectedDetailCb.Size = new System.Drawing.Size(143, 21);
+            this.heatTypeSelectedDetailCb.TabIndex = 5;
+            this.heatTypeSelectedDetailCb.Visible = false;
+            this.heatTypeSelectedDetailCb.TextChanged += new System.EventHandler(this.heatTypeSelectedCb_TextChanged);
+            // 
+            // heatTypeSelectedLbl
+            // 
+            this.heatTypeSelectedLbl.AutoSize = true;
+            this.heatTypeSelectedLbl.Location = new System.Drawing.Point(3, 47);
+            this.heatTypeSelectedLbl.Name = "heatTypeSelectedLbl";
+            this.heatTypeSelectedLbl.Size = new System.Drawing.Size(32, 13);
+            this.heatTypeSelectedLbl.TabIndex = 4;
+            this.heatTypeSelectedLbl.Text = "label:";
+            this.heatTypeSelectedLbl.Visible = false;
+            // 
             // preheatGroupBox
             // 
             this.preheatGroupBox.Controls.Add(this.preheatTypePanel);
@@ -665,6 +719,37 @@
             this.preheatGroupBox.TabIndex = 0;
             this.preheatGroupBox.TabStop = false;
             this.preheatGroupBox.Text = "Preheat Section";
+            // 
+            // preheatTypePanel
+            // 
+            this.preheatTypePanel.Controls.Add(this.preheatTypeLbl);
+            this.preheatTypePanel.Controls.Add(this.preheatTypeCb);
+            this.preheatTypePanel.Controls.Add(this.preheatTypeSelectedDetailCb);
+            this.preheatTypePanel.Controls.Add(this.preheatTypeSelectedLbl);
+            this.preheatTypePanel.Location = new System.Drawing.Point(155, 5);
+            this.preheatTypePanel.Name = "preheatTypePanel";
+            this.preheatTypePanel.Size = new System.Drawing.Size(225, 78);
+            this.preheatTypePanel.TabIndex = 6;
+            // 
+            // preheatTypeLbl
+            // 
+            this.preheatTypeLbl.AutoSize = true;
+            this.preheatTypeLbl.Location = new System.Drawing.Point(3, 15);
+            this.preheatTypeLbl.Name = "preheatTypeLbl";
+            this.preheatTypeLbl.Size = new System.Drawing.Size(74, 13);
+            this.preheatTypeLbl.TabIndex = 2;
+            this.preheatTypeLbl.Text = "Preheat Type:";
+            this.preheatTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // preheatTypeCb
+            // 
+            this.preheatTypeCb.Enabled = false;
+            this.preheatTypeCb.FormattingEnabled = true;
+            this.preheatTypeCb.Location = new System.Drawing.Point(79, 12);
+            this.preheatTypeCb.Name = "preheatTypeCb";
+            this.preheatTypeCb.Size = new System.Drawing.Size(143, 21);
+            this.preheatTypeCb.TabIndex = 3;
+            this.preheatTypeCb.TextChanged += new System.EventHandler(this.preheatTypeCb_TextChanged);
             // 
             // preheatTypeSelectedDetailCb
             // 
@@ -686,26 +771,6 @@
             this.preheatTypeSelectedLbl.Text = "label:";
             this.preheatTypeSelectedLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.preheatTypeSelectedLbl.Visible = false;
-            // 
-            // preheatTypeCb
-            // 
-            this.preheatTypeCb.Enabled = false;
-            this.preheatTypeCb.FormattingEnabled = true;
-            this.preheatTypeCb.Location = new System.Drawing.Point(79, 12);
-            this.preheatTypeCb.Name = "preheatTypeCb";
-            this.preheatTypeCb.Size = new System.Drawing.Size(143, 21);
-            this.preheatTypeCb.TabIndex = 3;
-            this.preheatTypeCb.TextChanged += new System.EventHandler(this.preheatTypeCb_TextChanged);
-            // 
-            // preheatTypeLbl
-            // 
-            this.preheatTypeLbl.AutoSize = true;
-            this.preheatTypeLbl.Location = new System.Drawing.Point(3, 15);
-            this.preheatTypeLbl.Name = "preheatTypeLbl";
-            this.preheatTypeLbl.Size = new System.Drawing.Size(74, 13);
-            this.preheatTypeLbl.TabIndex = 2;
-            this.preheatTypeLbl.Text = "Preheat Type:";
-            this.preheatTypeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // preheatAvailCheckBox
             // 
@@ -811,64 +876,25 @@
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
-            // preheatTypePanel
+            // heatFollowUpCb
             // 
-            this.preheatTypePanel.Controls.Add(this.preheatTypeLbl);
-            this.preheatTypePanel.Controls.Add(this.preheatTypeCb);
-            this.preheatTypePanel.Controls.Add(this.preheatTypeSelectedDetailCb);
-            this.preheatTypePanel.Controls.Add(this.preheatTypeSelectedLbl);
-            this.preheatTypePanel.Location = new System.Drawing.Point(155, 5);
-            this.preheatTypePanel.Name = "preheatTypePanel";
-            this.preheatTypePanel.Size = new System.Drawing.Size(225, 78);
-            this.preheatTypePanel.TabIndex = 6;
+            this.heatFollowUpCb.Enabled = false;
+            this.heatFollowUpCb.FormattingEnabled = true;
+            this.heatFollowUpCb.Location = new System.Drawing.Point(79, 82);
+            this.heatFollowUpCb.Name = "heatFollowUpCb";
+            this.heatFollowUpCb.Size = new System.Drawing.Size(143, 21);
+            this.heatFollowUpCb.TabIndex = 7;
+            this.heatFollowUpCb.Visible = false;
             // 
-            // heatTypePanel
+            // heatFollowUpLbl
             // 
-            this.heatTypePanel.Controls.Add(this.heatTypeLbl);
-            this.heatTypePanel.Controls.Add(this.heatTypeCb);
-            this.heatTypePanel.Controls.Add(this.comboBox2);
-            this.heatTypePanel.Controls.Add(this.label2);
-            this.heatTypePanel.Location = new System.Drawing.Point(6, 19);
-            this.heatTypePanel.Name = "heatTypePanel";
-            this.heatTypePanel.Size = new System.Drawing.Size(225, 78);
-            this.heatTypePanel.TabIndex = 7;
-            // 
-            // heatTypeLbl
-            // 
-            this.heatTypeLbl.AutoSize = true;
-            this.heatTypeLbl.Location = new System.Drawing.Point(3, 15);
-            this.heatTypeLbl.Name = "heatTypeLbl";
-            this.heatTypeLbl.Size = new System.Drawing.Size(74, 13);
-            this.heatTypeLbl.TabIndex = 2;
-            this.heatTypeLbl.Text = "Heating Type:";
-            // 
-            // heatTypeCb
-            // 
-            this.heatTypeCb.FormattingEnabled = true;
-            this.heatTypeCb.Location = new System.Drawing.Point(79, 12);
-            this.heatTypeCb.Name = "heatTypeCb";
-            this.heatTypeCb.Size = new System.Drawing.Size(143, 21);
-            this.heatTypeCb.TabIndex = 3;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(79, 46);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(143, 21);
-            this.comboBox2.TabIndex = 5;
-            this.comboBox2.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 49);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label:";
-            this.label2.Visible = false;
+            this.heatFollowUpLbl.AutoSize = true;
+            this.heatFollowUpLbl.Location = new System.Drawing.Point(3, 85);
+            this.heatFollowUpLbl.Name = "heatFollowUpLbl";
+            this.heatFollowUpLbl.Size = new System.Drawing.Size(32, 13);
+            this.heatFollowUpLbl.TabIndex = 6;
+            this.heatFollowUpLbl.Text = "label:";
+            this.heatFollowUpLbl.Visible = false;
             // 
             // AhuEquipmentSetup
             // 
@@ -898,12 +924,12 @@
             this.supplyFanGroupBox.PerformLayout();
             this.heatingTab.ResumeLayout(false);
             this.heatingGroupBox.ResumeLayout(false);
+            this.heatTypePanel.ResumeLayout(false);
+            this.heatTypePanel.PerformLayout();
             this.preheatGroupBox.ResumeLayout(false);
             this.preheatGroupBox.PerformLayout();
             this.preheatTypePanel.ResumeLayout(false);
             this.preheatTypePanel.PerformLayout();
-            this.heatTypePanel.ResumeLayout(false);
-            this.heatTypePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -980,7 +1006,9 @@
         private System.Windows.Forms.Panel heatTypePanel;
         private System.Windows.Forms.Label heatTypeLbl;
         private System.Windows.Forms.ComboBox heatTypeCb;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox heatTypeSelectedDetailCb;
+        private System.Windows.Forms.Label heatTypeSelectedLbl;
+        private System.Windows.Forms.ComboBox heatFollowUpCb;
+        private System.Windows.Forms.Label heatFollowUpLbl;
     }
 }
